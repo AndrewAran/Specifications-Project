@@ -36,10 +36,6 @@ public class CreateUserAccountController implements Initializable {
     @FXML
     private Button BButton;
 
-
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         assert BButton != null;

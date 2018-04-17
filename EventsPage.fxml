@@ -95,7 +95,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
+                        <Button fx:id="ProfileButton" mnemonicParsing="false" text="Profile">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -108,7 +108,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="ProfileButton" mnemonicParsing="false" text="Profile">
+                        <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -308,6 +308,5 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
