@@ -9,11 +9,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EventsPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EventsPageController">
    <children>
       <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane fx:id="Us" style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
+          <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
                <children>
                   <Button fx:id="BackButton" layoutX="99.0" layoutY="524.0" mnemonicParsing="false" text="Back">
                      <font>
@@ -183,7 +183,7 @@
                         </LinearGradient>
                      </textFill>
                   </Label>
-                  <Label fx:id="Label1" layoutX="386.0" layoutY="97.0" text="Recent events" textAlignment="CENTER">
+                  <Label layoutX="386.0" layoutY="97.0" text="Recent events" textAlignment="CENTER">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="57.0" />
                      </font>
@@ -198,7 +198,7 @@
                         </LinearGradient>
                      </textFill>
                   </Label>
-                  <Label fx:id="Label21" layoutX="394.0" layoutY="210.0" text="Placeholder 1" textAlignment="CENTER">
+                  <Label fx:id="Label1" layoutX="394.0" layoutY="210.0" text="Placeholder 1" textAlignment="CENTER">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="57.0" />
                      </font>
