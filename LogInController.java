@@ -33,7 +33,7 @@ public class LogInController implements Initializable {
 
     public void HandleCreateButtonAction(ActionEvent event){//currently it just goes to appropriate page
         try{//this switches the scene to the create user page
-        Parent UserFrame = FXMLLoader.load(getClass().getResource("createUserAccount.fxml"));
+        Parent UserFrame = FXMLLoader.load(getClass().getResource("CreateAccountPage.fxml"));
         Scene UserFrameScene = new Scene(UserFrame);
         Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
         getUserFrame.setScene(UserFrameScene);
@@ -44,7 +44,7 @@ public class LogInController implements Initializable {
     }
     public void HandleLogInButtonAction(ActionEvent event){//this happens when login button is pressed. here we will put password validation
         try{//this switches the scene to the create user page
-            Parent UserFrame = FXMLLoader.load(getClass().getResource("createUserAccount.fxml"));
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             Scene UserFrameScene = new Scene(UserFrame);
             Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
