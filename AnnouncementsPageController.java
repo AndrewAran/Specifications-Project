@@ -1,3 +1,5 @@
+package main.java;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -41,27 +43,6 @@ public class AnnouncementsPageController implements Initializable {
     public Button ProfileButton;
 
     @FXML
-    public Label Label1;
-
-    @FXML
-    public Label Label2;
-
-    @FXML
-    public Label Label3;
-
-    @FXML
-    public Label Label4;
-
-    @FXML
-    public Label Label5;
-
-    @FXML
-    public Button PageForwardButton;
-
-    @FXML
-    public Button PageBackButton;
-
-    @FXML
     public Button CreateButton;
 
     @FXML
@@ -70,8 +51,19 @@ public class AnnouncementsPageController implements Initializable {
     @FXML
     public Button DeleteButton;
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        if(!LogInController.isAdmin){
+            DeleteButton.setVisible(false);
+            EditButton.setVisible(false);
+            CreateButton.setVisible(false);
+/*            RunEventButton.setVisible(false);
+            StatisticsButton.setVisible(false);*/
+        }
+
         HomeButton.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent event) {
@@ -165,6 +157,7 @@ public class AnnouncementsPageController implements Initializable {
         LogoutButton.setOnAction(new EventHandler<>() {
             @Override
             public void handle(ActionEvent event) {
+                LogInController.isAdmin = false;
                 try {
                     Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
                     Scene UserFrameScene = new Scene(UserFrame);
@@ -177,5 +170,4 @@ public class AnnouncementsPageController implements Initializable {
             }
         });
     }
-
 }

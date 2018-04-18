@@ -1,3 +1,5 @@
+package main.java;
+
 import javafx.fxml.FXML;
 
 import java.io.IOException;
@@ -52,7 +54,7 @@ public class CreateUserAccountController implements Initializable {
                     System.out.println(e);
                 }
             }
-    });
+        });
 
         CButton.setOnAction(new javafx.event.EventHandler<>() {
             @Override

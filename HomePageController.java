@@ -1,5 +1,5 @@
-import com.oracle.tools.packager.Log;
-import javafx.event.ActionEvent;
+package main.java;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,13 +9,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javafx.scene.control.Button;
-
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -153,24 +152,50 @@ public class HomePageController implements Initializable {
             }
         });
 
-        BackButton.setOnAction(new EventHandler<>() {
+        LogoutButton.setOnAction(new EventHandler<>() {
             @Override
             public void handle(javafx.event.ActionEvent event) {
-                try {
-                    Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-                    Scene UserFrameScene = new Scene(UserFrame);
-                    Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    getUserFrame.setScene(UserFrameScene);
-                    getUserFrame.show();
-                } catch (IOException e) {
-                    System.out.println(e);
-                }
+                Stage popupwindow = new Stage();
+
+                popupwindow.initModality(Modality.APPLICATION_MODAL);
+                popupwindow.setTitle("Log Out Confirmation");
+
+                Label label1 = new Label("Are you sure you want to log out?");
+
+                Button button1 = new Button("Yes");
+                Button button2 = new Button("No");
+
+                VBox layout= new VBox(10);
+
+
+                layout.getChildren().addAll(label1, button1, button2);
+                layout.setAlignment(Pos.CENTER);
+                Scene scene1= new Scene(layout, 300, 250);
+                popupwindow.setScene(scene1);
+                popupwindow.showAndWait();
+
+                button2.setOnAction(event1 -> popupwindow.close());
+                button1.setOnAction(new EventHandler<>() {
+
+                    @Override
+                    public void handle(javafx.event.ActionEvent event) {
+                        try {
+                            Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                            Scene UserFrameScene = new Scene(UserFrame);
+                            Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            getUserFrame.setScene(UserFrameScene);
+                            getUserFrame.show();
+                        } catch (IOException e) {
+                            System.out.println(e);
+                        }
+                    }
+                });
             }
         });
 
-        LogoutButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        BackButton.setOnAction(new EventHandler<>() {
             @Override
-            public void handle(MouseEvent event) {
+            public void handle(javafx.event.ActionEvent event) {
                 try {
                     Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
                     Scene UserFrameScene = new Scene(UserFrame);
