@@ -1,7 +1,5 @@
 import javafx.fxml.FXML;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.beans.EventHandler;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
