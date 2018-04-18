@@ -52,13 +52,13 @@ public class CreateUserAccountController implements Initializable {
                     System.out.println(e);
                 }
             }
-        });
+    });
 
         CButton.setOnAction(new javafx.event.EventHandler<>() {
             @Override
             public void handle(javafx.event.ActionEvent event) {//This needs to have the database stuff to add the new user to the user list, currently it just brings you to the home page
                 try {
-                    Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+                    Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
                     Scene UserFrameScene = new Scene(UserFrame);
                     Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     getUserFrame.setScene(UserFrameScene);
