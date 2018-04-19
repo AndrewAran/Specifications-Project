@@ -1,4 +1,3 @@
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -49,7 +48,7 @@ public class AnnouncementsPageController implements Initializable {
     public Button DeleteButton;
 
 
-    public void HandleHomeButton(ActionEvent mouseEvent) {
+    public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
             Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
             Scene UserFrameScene = new Scene(UserFrame);

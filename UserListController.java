@@ -1,12 +1,9 @@
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -14,82 +11,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EventsPageController implements Initializable{
+public class UserListController implements Initializable {
+    public ComboBox CBox;
 
-    @FXML
-    public Button BackButton;
-
-    @FXML
-    public Button HomeButton;
-
-    @FXML
-    public Button AnnouncementButton;
-
-    @FXML
-    public Button EventsButton;
-
-    @FXML
-    public Button GroupsButton;
-
-    @FXML
-    public Button UserListButton;
-
-    @FXML
-    public Button LogoutButton;
-
-    @FXML
-    public Button ProfileButton;
-
-    @FXML
-    public Button PageForwardButton;
-
-    @FXML
-    public Button PageBackButton;
-
-    @FXML
-    public Button CreateButton;
-
-    @FXML
-    public Button EditButton;
-
-    @FXML
-    public Button DeleteButton;
-
-    @FXML
-    public Button RunEventButton;
-
-    @FXML
-    public Button StatisticsButton;
-
-    @FXML
-    public Label Label1;
-
-    @FXML
-    public Label Label2;
-
-    @FXML
-    public Label Label3;
-
-    @FXML
-    public Label Label4;
-
-    @FXML
-    public Label Label5;
-
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        if(!LogInController.isAdmin){
-            DeleteButton.setVisible(false);
-            EditButton.setVisible(false);
-            CreateButton.setVisible(false);
-            RunEventButton.setVisible(false);
-            StatisticsButton.setVisible(false);
-        }
-    }
-
-    public void HandleHomeButton(ActionEvent mouseEvent) {
+    public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
             Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
             Scene UserFrameScene = new Scene(UserFrame);
@@ -174,16 +99,7 @@ public class EventsPageController implements Initializable{
         }
     }
 
-    public void HandleRunEventButton(MouseEvent mouseEvent) {
-        try {
-            Parent UserFrame = FXMLLoader.load(getClass().getResource("RunEventPage.fxml"));
-            Scene UserFrameScene = new Scene(UserFrame);
-            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            getUserFrame.setScene(UserFrameScene);
-            getUserFrame.show();
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+    public void initialize (URL url, ResourceBundle rb){
     }
-}
 
+}
