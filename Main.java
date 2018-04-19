@@ -3,22 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import org.h2.tools.DeleteDbFiles;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.h2.tools.DeleteDbFiles;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-
 public class Main extends Application {
 
+    static public int eventCount =-1;
+    static public String[] eventArray;
     //This will launch the login frame starting the program
     @Override
     public void start(Stage stage) throws Exception {
@@ -28,12 +28,8 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws Exception{
-        launch(args);
-
-        // delete the database named 'test' in the user home directory
-        //comment out by me because of intellij
-           DeleteDbFiles.execute("~", "H2Test", true);
+    public static void main(String[] args) throws Exception     {
+        DeleteDbFiles.execute("~", "H2Test", true);
 
         Class.forName("org.h2.Driver");
         Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
@@ -53,10 +49,11 @@ public class Main extends Application {
 
         stat.execute("CREATE TABLE profile" +
                 "(account_id SMALLINT UNSIGNED," +
-                "firstname VARCHAR(20)," +
-                "lastname VARCHAR(20)," +
+                "firstname VARCHAR(30)," +
+                "lastname VARCHAR(30)," +
+                "email VARCHAR(30)," +
                 "major VARCHAR(20)," +
-                "sorority VARCHAR(20)," +
+                "other VARCHAR(50)," +
                 "CONSTRAINT pk_profile PRIMARY KEY (account_id)," +
                 "CONSTRAINT fk_profile_account_id FOREIGN KEY (account_id) " +
                 "REFERENCES account (account_id)" +
@@ -65,23 +62,28 @@ public class Main extends Application {
         stat.execute("CREATE TABLE event" +
                 "(event_id SMALLINT UNSIGNED," +
                 "eventname VARCHAR(20)," +
+                "eventlocation VARCHAR(20)," +
                 "eventdate DATE," +
+                "eventtime VARCHAR(20)," +
+                "sorority VARCHAR(20)," +
+                "description VARCHAR(50)," +
                 "CONSTRAINT pk_event PRIMARY KEY (event_id)," +
                 ");");
 
+
         stat.execute("CREATE TABLE announcement" +
                 "(announcement_id SMALLINT UNSIGNED," +
-                "body VARCHAR(50)," +
-                "group_ VARCHAR(20)," +
+                "description VARCHAR(50)," +
                 "CONSTRAINT pk_announcement PRIMARY KEY (announcement_id)," +
                 ");");
 
 
 
         stat.execute("insert into account values(1, 'bjsimmons0221','12345', 815070221)");
-        stat.execute("insert into profile values(1, 'Bryan','Simmons', 'Software Engineering',null)");
-        stat.execute("insert into event values(1, 'Group Presentation','2018-04-19')");
-        stat.execute("insert into announcement values(1, 'This is a test announcement','c2019')");
+        stat.execute("insert into profile values(1, 'Bryan','Simmons','fgcu@fgcu.edu', 'Software Engineering',null)");
+        stat.execute("insert into event values(1, 'Group Presentation','classroom','2018-04-19', '11:00AM','Omega Chi','present')");
+        stat.execute("insert into event values(2, 'Group Presentation2','classroom2','2018-04-19', '11:02AM','Omega Chi','present2')");
+        stat.execute("insert into announcement values(1, 'This is a test announcement')");
         ResultSet rs;
 
         // print user/pass/uin from account
@@ -106,22 +108,43 @@ public class Main extends Application {
             System.out.println(rs.getString("firstname"));
             System.out.println(rs.getString("lastname"));
             System.out.println(rs.getString("major"));
-            System.out.println(rs.getString("sorority"));
+            System.out.println(rs.getString("email"));
         }
 
+        eventArray = new String[5];
         rs = stat.executeQuery("select * from event WHERE event_id = 1");
         while (rs.next()) {
             System.out.println(rs.getString("eventname"));
+            System.out.println(rs.getString("eventlocation"));
             System.out.println(rs.getString("eventdate"));
+            System.out.println(rs.getString("eventtime"));
+            System.out.println(rs.getString("sorority"));
+            System.out.println(rs.getString("description"));
+            eventCount++;
+            eventArray[eventCount] = rs.getString("eventname")+rs.getString("eventlocation")+
+                    rs.getString("eventdate")+rs.getString("eventtime")+rs.getString("sorority")+
+                    rs.getString("description");
+            System.out.println("eventarray1 "+eventArray[0]);
         }
 
         rs = stat.executeQuery("select * from announcement WHERE announcement_id = 1");
         while (rs.next()) {
-            System.out.println(rs.getString("body"));
-            System.out.println(rs.getString("group_"));
+            System.out.println(rs.getString("description"));
+        }
+
+        rs = stat.executeQuery("select * from event");
+        while (rs.next()) {
+            System.out.println(rs.getString("eventname"));
+            System.out.println(rs.getString("eventlocation"));
+            System.out.println(rs.getString("eventdate"));
+            System.out.println(rs.getString("eventtime"));
+            System.out.println(rs.getString("sorority"));
+            System.out.println(rs.getString("description"));
+
+
         }
         stat.close();
         conn.close();
+        launch(args);
     }
-
 }
