@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePageController">
    <children>
       <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -57,24 +57,19 @@
                         </Button>
                     </buttons>
                   </ButtonBar>
-                  <Label fx:id="Label2" layoutX="394.0" layoutY="273.0" text="Placeholder 2" textAlignment="CENTER" textFill="#171717">
+                  <Label fx:id="Label2" layoutX="204.0" layoutY="275.0" text="Swishes For Wishes          3/8/2015           4:00PM           Chi Omega            Basketball torunament" textAlignment="CENTER" textFill="#171717">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label3" layoutX="394.0" layoutY="333.0" text="Placeholder 3" textAlignment="CENTER" textFill="#171717">
+                  <Label fx:id="Label3" layoutX="201.0" layoutY="335.0" text=" Chi Omega Monthly meeting is canceled for April" textAlignment="CENTER" textFill="#171717">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label4" layoutX="392.0" layoutY="399.0" text="Placeholder 4" textAlignment="CENTER" textFill="#171717">
+                  <Label fx:id="Label4" layoutX="204.0" layoutY="391.0" text="Group Presentation          Room                4/19/2018          12:00PM             Present Projects" textAlignment="CENTER" textFill="#171717">
                      <font>
-                        <Font name="Arial" size="57.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label5" layoutX="393.0" layoutY="460.0" text="Placeholder 5" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="Label1" layoutX="91.0" layoutY="102.0" text="Recent events and announcements" textAlignment="CENTER" textFill="#171717">
@@ -82,9 +77,9 @@
                         <Font name="Arial" size="57.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label21" layoutX="394.0" layoutY="210.0" text="Placeholder 1" textAlignment="CENTER" textFill="#171717">
+                  <Label fx:id="Label21" layoutX="204.0" layoutY="220.0" text="Spring Break, March 5-10" textAlignment="CENTER" textFill="#171717">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="16.0" />
                      </font>
                   </Label>
                </children>
