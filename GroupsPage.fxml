@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GroupsPageControllerClass">
     <children>
         <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
@@ -30,7 +30,7 @@
                         </Button>
                         <ButtonBar layoutX="73.0" layoutY="57.0" prefHeight="40.0">
                             <buttons>
-                                <Button fx:id="HomeButton" mnemonicParsing="false" text="Home">
+                                <Button fx:id="HomeButton" mnemonicParsing="false" onMouseClicked="#HandleHomeButton" text="Home">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -43,7 +43,7 @@
                                         </LinearGradient>
                                     </textFill>
                                 </Button>
-                                <Button fx:id="AnnouncementButton" mnemonicParsing="false" text="Announcements">
+                                <Button fx:id="AnnouncementButton" mnemonicParsing="false" onMouseClicked="#HandleAnnButton" text="Announcements">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -56,7 +56,7 @@
                                         </LinearGradient>
                                     </textFill>
                                 </Button>
-                                <Button fx:id="EventsButton" mnemonicParsing="false" text="Events">
+                                <Button fx:id="EventsButton" mnemonicParsing="false" onMouseClicked="#HandleEventsButton" text="Events">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -69,7 +69,7 @@
                                         </LinearGradient>
                                     </textFill>
                                 </Button>
-                                <Button fx:id="GroupsButton" mnemonicParsing="false" text="Groups">
+                                <Button fx:id="GroupsButton" mnemonicParsing="false" onMouseClicked="#HandleGroupsButton" text="Groups">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -82,7 +82,7 @@
                                         </LinearGradient>
                                     </textFill>
                                 </Button>
-                                <Button fx:id="UserListButton" mnemonicParsing="false" text="User List">
+                                <Button fx:id="UserListButton" mnemonicParsing="false" onMouseClicked="#HandleUserListButton" text="User List">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -95,7 +95,7 @@
                                         </LinearGradient>
                                     </textFill>
                                 </Button>
-                                <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
+                                <Button fx:id="LogoutButton" mnemonicParsing="false" onMouseClicked="#HandleLogOutButton" text="Logout">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -108,7 +108,7 @@
                                         </LinearGradient>
                                     </textFill>
                                 </Button>
-                                <Button fx:id="ProfileButton" mnemonicParsing="false" text="Profile">
+                                <Button fx:id="ProfileButton" mnemonicParsing="false" onMouseClicked="#HandleProfileButton" text="Profile">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -153,118 +153,118 @@
                                 </LinearGradient>
                             </textFill>
                         </Label>
-                  <Label fx:id="GroupsPlaceHolder2Label" layoutX="483.0" layoutY="246.0" text="GroupPlaceHolder2" textAlignment="CENTER">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="22.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#77d2eb" />
-                              <Stop color="#77d2eb" offset="0.2528735632183906" />
-                              <Stop color="#171717" offset="0.9693486590038314" />
-                              <Stop color="#171717" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Label>
-                  <Label fx:id="GroupsPlaceHolder3Label" layoutX="483.0" layoutY="282.0" text="GroupPlaceHolder3" textAlignment="CENTER">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="22.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#77d2eb" />
-                              <Stop color="#77d2eb" offset="0.2528735632183906" />
-                              <Stop color="#171717" offset="0.9693486590038314" />
-                              <Stop color="#171717" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Label>
-                  <Label fx:id="GroupsPlaceHolder4Label" layoutX="483.0" layoutY="323.0" text="GroupPlaceHolder4" textAlignment="CENTER">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="22.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#77d2eb" />
-                              <Stop color="#77d2eb" offset="0.2528735632183906" />
-                              <Stop color="#171717" offset="0.9693486590038314" />
-                              <Stop color="#171717" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Label>
-                  <Label fx:id="GroupsPlaceHolder5Label" layoutX="483.0" layoutY="368.0" text="GroupPlaceHolder5" textAlignment="CENTER">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="22.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#77d2eb" />
-                              <Stop color="#77d2eb" offset="0.2528735632183906" />
-                              <Stop color="#171717" offset="0.9693486590038314" />
-                              <Stop color="#171717" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Label>
-                  <Button fx:id="CreateGroupButton" layoutX="611.0" layoutY="483.0" mnemonicParsing="false" text="Create">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="12.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#31b2b9" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Button>
-                  <Button fx:id="DeleteGroupButton" layoutX="519.0" layoutY="483.0" mnemonicParsing="false" text="Delete">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="12.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#31b2b9" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Button>
-                  <Button fx:id="NextPageButton" layoutX="899.0" layoutY="483.0" mnemonicParsing="false" text="Next page">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="12.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#31b2b9" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Button>
-                  <Button fx:id="PreviousPageButton" layoutX="757.0" layoutY="483.0" mnemonicParsing="false" text="Previous page">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="12.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#31b2b9" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Button>
+                        <Label fx:id="GroupsPlaceHolder2Label" layoutX="483.0" layoutY="246.0" text="GroupPlaceHolder2" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="22.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#77d2eb" />
+                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
+                                        <Stop color="#171717" offset="0.9693486590038314" />
+                                        <Stop color="#171717" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Label>
+                        <Label fx:id="GroupsPlaceHolder3Label" layoutX="483.0" layoutY="282.0" text="GroupPlaceHolder3" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="22.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#77d2eb" />
+                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
+                                        <Stop color="#171717" offset="0.9693486590038314" />
+                                        <Stop color="#171717" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Label>
+                        <Label fx:id="GroupsPlaceHolder4Label" layoutX="483.0" layoutY="323.0" text="GroupPlaceHolder4" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="22.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#77d2eb" />
+                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
+                                        <Stop color="#171717" offset="0.9693486590038314" />
+                                        <Stop color="#171717" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Label>
+                        <Label fx:id="GroupsPlaceHolder5Label" layoutX="483.0" layoutY="368.0" text="GroupPlaceHolder5" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="22.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#77d2eb" />
+                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
+                                        <Stop color="#171717" offset="0.9693486590038314" />
+                                        <Stop color="#171717" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Label>
+                        <Button fx:id="CreateGroupButton" layoutX="611.0" layoutY="483.0" mnemonicParsing="false" text="Create">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#31b2b9" />
+                                        <Stop color="BLACK" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Button>
+                        <Button fx:id="DeleteGroupButton" layoutX="519.0" layoutY="483.0" mnemonicParsing="false" text="Delete">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#31b2b9" />
+                                        <Stop color="BLACK" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Button>
+                        <Button fx:id="NextPageButton" layoutX="899.0" layoutY="483.0" mnemonicParsing="false" text="Next page">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#31b2b9" />
+                                        <Stop color="BLACK" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Button>
+                        <Button fx:id="PreviousPageButton" layoutX="757.0" layoutY="483.0" mnemonicParsing="false" text="Previous page">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                            </font>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop color="#31b2b9" />
+                                        <Stop color="BLACK" offset="1.0" />
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Button>
                     </children>
                 </AnchorPane>
             </items>
