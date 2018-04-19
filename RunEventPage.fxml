@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
@@ -18,7 +18,7 @@
                     <children>
                         <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" mnemonicParsing="false" text="Back">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                <Font name="Arial" size="12.0" />
                             </font>
                             <textFill>
                                 <LinearGradient endX="1.0" endY="1.0">
@@ -33,664 +33,232 @@
                             <buttons>
                                 <Button fx:id="HomeButton" mnemonicParsing="false" text="Home">
                                     <font>
-                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                        <Font name="Arial" size="14.0" />
                                     </font>
-                                    <textFill>
-                                        <LinearGradient endX="1.0" endY="1.0">
-                                            <stops>
-                                                <Stop color="#31b2b9" />
-                                                <Stop color="BLACK" offset="1.0" />
-                                            </stops>
-                                        </LinearGradient>
-                                    </textFill>
                                 </Button>
                                 <Button fx:id="AnnouncementButton" mnemonicParsing="false" text="Announcements">
                                     <font>
-                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                        <Font name="Arial" size="14.0" />
                                     </font>
-                                    <textFill>
-                                        <LinearGradient endX="1.0" endY="1.0">
-                                            <stops>
-                                                <Stop color="#31b2b9" />
-                                                <Stop color="BLACK" offset="1.0" />
-                                            </stops>
-                                        </LinearGradient>
-                                    </textFill>
                                 </Button>
                                 <Button fx:id="EventsButton" mnemonicParsing="false" text="Events">
                                     <font>
-                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                        <Font name="Arial" size="14.0" />
                                     </font>
-                                    <textFill>
-                                        <LinearGradient endX="1.0" endY="1.0">
-                                            <stops>
-                                                <Stop color="#31b2b9" />
-                                                <Stop color="BLACK" offset="1.0" />
-                                            </stops>
-                                        </LinearGradient>
-                                    </textFill>
                                 </Button>
                                 <Button fx:id="GroupsButton" mnemonicParsing="false" text="Groups">
                                     <font>
-                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                        <Font name="Arial" size="14.0" />
                                     </font>
-                                    <textFill>
-                                        <LinearGradient endX="1.0" endY="1.0">
-                                            <stops>
-                                                <Stop color="#31b2b9" />
-                                                <Stop color="BLACK" offset="1.0" />
-                                            </stops>
-                                        </LinearGradient>
-                                    </textFill>
                                 </Button>
                                 <Button fx:id="UserListButton" mnemonicParsing="false" text="User List">
                                     <font>
-                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                        <Font name="Arial" size="14.0" />
                                     </font>
-                                    <textFill>
-                                        <LinearGradient endX="1.0" endY="1.0">
-                                            <stops>
-                                                <Stop color="#31b2b9" />
-                                                <Stop color="BLACK" offset="1.0" />
-                                            </stops>
-                                        </LinearGradient>
-                                    </textFill>
                                 </Button>
                                 <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
                                     <font>
-                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                        <Font name="Arial" size="14.0" />
                                     </font>
-                                    <textFill>
-                                        <LinearGradient endX="1.0" endY="1.0">
-                                            <stops>
-                                                <Stop color="#31b2b9" />
-                                                <Stop color="BLACK" offset="1.0" />
-                                            </stops>
-                                        </LinearGradient>
-                                    </textFill>
                                 </Button>
                                 <Button fx:id="ProfileButton" mnemonicParsing="false" text="Profile">
                                     <font>
-                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                        <Font name="Arial" size="14.0" />
                                     </font>
-                                    <textFill>
-                                        <LinearGradient endX="1.0" endY="1.0">
-                                            <stops>
-                                                <Stop color="#31b2b9" />
-                                                <Stop color="BLACK" offset="1.0" />
-                                            </stops>
-                                        </LinearGradient>
-                                    </textFill>
                                 </Button>
                             </buttons>
                         </ButtonBar>
                         <Label fx:id="Label2" layoutX="648.0" layoutY="203.0" text="Checked in" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="16.0" />
+                                <Font name="Arial" size="16.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label1" layoutX="382.0" layoutY="116.0" text="Event Running" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="57.0" />
+                                <Font name="Arial" size="57.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label2111" layoutX="171.0" layoutY="173.0" text="Currently Running" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="16.0" />
+                                <Font name="Arial" size="16.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label21111" layoutX="99.0" layoutY="196.0" text="Event Name" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label211111" layoutX="194.0" layoutY="196.0" text="Checked In" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label211112" layoutX="284.0" layoutY="196.0" text="RSVP's" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="EventNameLabel" layoutX="98.0" layoutY="224.0" text="PlaceHolder" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedInLabel" layoutX="227.0" layoutY="224.0" text="1" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="RsvpLabel" layoutX="303.0" layoutY="223.0" text="1" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <TextField fx:id="CheckInTextBox" layoutX="175.0" layoutY="301.0" promptText="E" text="Enter UIN" />
                         <TextField fx:id="CheckOutTextBox" layoutX="174.0" layoutY="349.0" text="Enter UIN" />
                         <Button fx:id="CheckInButton" layoutX="358.0" layoutY="304.0" mnemonicParsing="false" text="Confirm">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                <Font name="Arial" size="12.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#31b2b9" />
-                                        <Stop color="BLACK" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Button>
                         <Button fx:id="CheckOutButton" layoutX="360.0" layoutY="351.0" mnemonicParsing="false" text="Confirm">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                                <Font name="Arial" size="12.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#31b2b9" />
-                                        <Stop color="BLACK" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Button>
                         <Label fx:id="Label21111211" layoutX="83.0" layoutY="303.0" text="Check in" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label21111212" layoutX="83.0" layoutY="352.0" text="Check out" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label21" layoutX="875.0" layoutY="203.0" text="Checked out" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="16.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label22" layoutX="629.0" layoutY="232.0" text="Name" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label23" layoutX="710.0" layoutY="232.0" text="Time" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label24" layoutX="848.0" layoutY="232.0" text="Name" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="Label25" layoutX="946.0" layoutY="232.0" text="Time" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn1Label" layoutX="643.0" layoutY="267.0" text="CheckedIn1" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn2Label" layoutX="642.0" layoutY="289.0" text="CheckedIn2" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn3Label" layoutX="642.0" layoutY="313.0" text="CheckedIn3" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn4Label" layoutX="642.0" layoutY="338.0" text="CheckedIn4" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn5Label" layoutX="641.0" layoutY="362.0" text="CheckedIn5" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn6Label" layoutX="641.0" layoutY="385.0" text="CheckedIn6" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn7Label" layoutX="640.0" layoutY="406.0" text="CheckedIn7" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut1Label" layoutX="869.0" layoutY="266.0" text="CheckOut1" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut2Label" layoutX="869.0" layoutY="290.0" text="CheckOut2" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut3Label" layoutX="869.0" layoutY="316.0" text="CheckOut3" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut4Label" layoutX="869.0" layoutY="341.0" text="CheckOut4" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut5Label" layoutX="870.0" layoutY="363.0" text="CheckOut5" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut6Label" layoutX="871.0" layoutY="383.0" text="CheckOut6" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn8Label" layoutX="640.0" layoutY="424.0" text="CheckedIn8" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn9Label" layoutX="641.0" layoutY="443.0" text="CheckedIn9" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckedIn10Label" layoutX="642.0" layoutY="465.0" text="CheckedIn10" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut7Label" layoutX="872.0" layoutY="402.0" text="CheckOut7" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut8Label" layoutX="873.0" layoutY="423.0" text="CheckOut8" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut9Label" layoutX="873.0" layoutY="441.0" text="CheckOut9" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                         <Label fx:id="CheckOut10Label" layoutX="872.0" layoutY="464.0" text="CheckOut10" textAlignment="CENTER">
                             <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                <Font name="Arial" size="14.0" />
                             </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#77d2eb" />
-                                        <Stop color="#77d2eb" offset="0.2528735632183906" />
-                                        <Stop color="#171717" offset="0.9693486590038314" />
-                                        <Stop color="#171717" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
                         </Label>
                     </children>
                 </AnchorPane>

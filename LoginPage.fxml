@@ -8,8 +8,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogInController">
@@ -27,77 +25,31 @@
             </AnchorPane>
             <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
                <children>
-                  <Label layoutX="208.0" layoutY="150.0" text="Log In" textAlignment="CENTER">
+                  <Label layoutX="208.0" layoutY="150.0" text="Log In" textAlignment="CENTER" textFill="#171717">
                      <font>
-                        <Font name="Arial Rounded MT Bold" size="57.0" />
+                        <Font name="Arial" size="27.0" />
                      </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#77d2eb" />
-                              <Stop color="#77d2eb" offset="0.2528735632183906" />
-                              <Stop color="#171717" offset="0.9693486590038314" />
-                              <Stop color="#171717" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
                   </Label>
                   <PasswordField layoutX="293.0" layoutY="309.0" />
                   <TextField fx:id="UNTextField" layoutX="293.0" layoutY="256.0" />
-                  <Button layoutX="262.0" layoutY="375.0" mnemonicParsing="false" onAction="#HandleLogInButtonAction" text="Log In ">
+                  <Button layoutX="262.0" layoutY="375.0" mnemonicParsing="false" onAction="#HandleLogInButtonAction" text="Log In " textFill="#171717">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                  <Label layoutX="118.0" layoutY="253.0" text="User Name" textAlignment="CENTER" textFill="#171717">
+                     <font>
+                        <Font name="Arial" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="126.0" layoutY="306.0" text="Password" textAlignment="CENTER" textFill="#171717">
+                     <font>
+                        <Font name="Arial" size="27.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="236.0" layoutY="432.0" mnemonicParsing="false" onAction="#HandleCreateButtonAction" text="Create Account" textFill="#171717">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                      </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#31b2b9" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill></Button>
-                  <Label layoutX="118.0" layoutY="253.0" text="User Name" textAlignment="CENTER">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="27.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#77d2eb" />
-                              <Stop color="#77d2eb" offset="0.2528735632183906" />
-                              <Stop color="#171717" offset="0.9693486590038314" />
-                              <Stop color="#171717" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Label>
-                  <Label layoutX="126.0" layoutY="306.0" text="Password" textAlignment="CENTER">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="27.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#77d2eb" />
-                              <Stop color="#77d2eb" offset="0.2528735632183906" />
-                              <Stop color="#171717" offset="0.9693486590038314" />
-                              <Stop color="#171717" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Label>
-                  <Button layoutX="236.0" layoutY="432.0" mnemonicParsing="false" onAction="#HandleCreateButtonAction" text="Create Account">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="12.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#31b2b9" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
                   </Button>
                </children>
             </AnchorPane>
