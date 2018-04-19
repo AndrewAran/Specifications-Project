@@ -62,7 +62,7 @@ public class HomePageController implements Initializable {
 
     public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
-            Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             Scene UserFrameScene = new Scene(UserFrame);
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);

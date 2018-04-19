@@ -5,7 +5,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -46,6 +48,20 @@ public class AnnouncementsPageController implements Initializable {
 
     @FXML
     public Button DeleteButton;
+
+    @FXML
+    private Label label21;
+
+    public Label Label1;
+
+    public Label Label2;
+
+    public Label Label3;
+
+    public Label Label4;
+
+    public Label Label5;
+
 
 
     public void HandleHomeButton(MouseEvent mouseEvent) {
@@ -143,5 +159,12 @@ public class AnnouncementsPageController implements Initializable {
 /*            RunEventButton.setVisible(false);
             StatisticsButton.setVisible(false);*/
         }
+
+        Label1.setText(Main.announcementArray[0]);
+        Label2.setText(Main.announcementArray[1]);
+        Label3.setText(Main.announcementArray[2]);
+        Label4.setText(Main.announcementArray[3]);
+        Label5.setText(Main.announcementArray[4]);
     }
+
 }

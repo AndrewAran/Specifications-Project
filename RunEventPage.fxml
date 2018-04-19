@@ -10,13 +10,13 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RunEventController">
     <children>
         <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
                 <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
                     <children>
-                        <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" mnemonicParsing="false" text="Back">
+                        <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" onMouseClicked="#HandleBackButton" mnemonicParsing="false"  text="Back">
                             <font>
                                 <Font name="Arial" size="12.0" />
                             </font>
@@ -115,12 +115,12 @@
                         </Label>
                         <TextField fx:id="CheckInTextBox" layoutX="175.0" layoutY="301.0" promptText="E" text="Enter UIN" />
                         <TextField fx:id="CheckOutTextBox" layoutX="174.0" layoutY="349.0" text="Enter UIN" />
-                        <Button fx:id="CheckInButton" layoutX="358.0" layoutY="304.0" mnemonicParsing="false" text="Confirm">
+                        <Button fx:id="CheckInButton" layoutX="358.0" layoutY="304.0" mnemonicParsing="false" onMouseClicked="#HandleCheckIn" text="Confirm">
                             <font>
                                 <Font name="Arial" size="12.0" />
                             </font>
                         </Button>
-                        <Button fx:id="CheckOutButton" layoutX="360.0" layoutY="351.0" mnemonicParsing="false" text="Confirm">
+                        <Button fx:id="CheckOutButton" layoutX="360.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#HandleCheckOut" text="Confirm">
                             <font>
                                 <Font name="Arial" size="12.0" />
                             </font>

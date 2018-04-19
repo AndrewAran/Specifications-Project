@@ -5,10 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EventsPageController">
    <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" />
       <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
@@ -57,24 +59,24 @@
                         </Button>
                     </buttons>
                   </ButtonBar>
-                  <Label fx:id="Label2" layoutX="394.0" layoutY="273.0" text="Placeholder 2" textAlignment="CENTER">
+                  <Label fx:id="Label2" layoutX="282.0" layoutY="273.0" text="Placeholder 2" textAlignment="CENTER">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label3" layoutX="394.0" layoutY="333.0" text="Placeholder 3" textAlignment="CENTER">
+                  <Label fx:id="Label3" layoutX="283.0" layoutY="333.0" text="Placeholder 3" textAlignment="CENTER">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label4" layoutX="392.0" layoutY="394.0" text="Placeholder 4" textAlignment="CENTER">
+                  <Label fx:id="Label4" layoutX="286.0" layoutY="394.0" text="Placeholder 4" textAlignment="CENTER">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label5" layoutX="391.0" layoutY="448.0" text="Placeholder 5" textAlignment="CENTER">
+                  <Label fx:id="Label5" layoutX="287.0" layoutY="448.0" text="Placeholder 5" textAlignment="CENTER">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
                   <Label layoutX="386.0" layoutY="97.0" text="Recent events" textAlignment="CENTER">
@@ -82,9 +84,9 @@
                         <Font name="Arial" size="57.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label1" layoutX="394.0" layoutY="210.0" text="Placeholder 1" textAlignment="CENTER">
+                  <Label fx:id="Label1" layoutX="284.0" layoutY="210.0" text="Placeholder 1" textAlignment="CENTER">
                      <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
                   <Button fx:id="PageForwardButton" layoutX="939.0" layoutY="520.0" mnemonicParsing="false" text="Page Forward">
@@ -107,7 +109,7 @@
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="DeleteButton" layoutX="464.0" layoutY="520.0" mnemonicParsing="false" text="Delete">
+                  <Button fx:id="DeleteButton" layoutX="464.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#HandleDelete" text="Delete">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>

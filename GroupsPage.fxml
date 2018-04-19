@@ -45,12 +45,12 @@
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="LogoutButton" mnemonicParsing="false" onMouseClicked="#HandleLogOutButton" text="Logout">
+                                <Button fx:id="ProfileButton" mnemonicParsing="false" onMouseClicked="#HandleProfileButton" text="Profile">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="ProfileButton" mnemonicParsing="false" onMouseClicked="#HandleProfileButton" text="Profile">
+                                <Button fx:id="LogoutButton" mnemonicParsing="false" onMouseClicked="#HandleLogOutButton" text="Logout">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>

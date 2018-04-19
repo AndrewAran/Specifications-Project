@@ -19,6 +19,7 @@ public class Main extends Application {
 
     static public int eventCount =-1;
     static public String[] eventArray;
+    static public String[] announcementArray;
     //This will launch the login frame starting the program
     @Override
     public void start(Stage stage) throws Exception {
@@ -112,7 +113,7 @@ public class Main extends Application {
         }
 
         eventArray = new String[5];
-        rs = stat.executeQuery("select * from event WHERE event_id = 1");
+        rs = stat.executeQuery("select * from event");
         while (rs.next()) {
             System.out.println(rs.getString("eventname"));
             System.out.println(rs.getString("eventlocation"));
@@ -121,8 +122,8 @@ public class Main extends Application {
             System.out.println(rs.getString("sorority"));
             System.out.println(rs.getString("description"));
             eventCount++;
-            eventArray[eventCount] = rs.getString("eventname")+rs.getString("eventlocation")+
-                    rs.getString("eventdate")+rs.getString("eventtime")+rs.getString("sorority")+
+            eventArray[eventCount] = rs.getString("eventname")+"    "+rs.getString("eventlocation")+"    "+
+                    rs.getString("eventdate")+"    "+rs.getString("eventtime")+"    "+rs.getString("sorority")+"    "+
                     rs.getString("description");
             System.out.println("eventarray1 "+eventArray[0]);
         }
@@ -142,6 +143,15 @@ public class Main extends Application {
             System.out.println(rs.getString("description"));
 
 
+        }
+        announcementArray = new String[5];
+
+        rs = stat.executeQuery("select * from announcement");
+        int annCount = 0;
+        while (rs.next()){
+            annCount++;
+            announcementArray[annCount] = rs.getString("description");
+            System.out.println("eventarray1 "+announcementArray[0]);
         }
         stat.close();
         conn.close();

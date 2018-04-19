@@ -57,34 +57,34 @@
                         </Button>
                     </buttons>
                   </ButtonBar>
-                  <Label fx:id="Label2" layoutX="394.0" layoutY="273.0" text="Placeholder 2" textAlignment="CENTER" textFill="#171717">
+                  <Label fx:id="Label2" layoutX="257.0" layoutY="273.0" text="Placeholder 2" textAlignment="CENTER" textFill="#171717">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label3" layoutX="257.0" layoutY="333.0" text="Placeholder 3" textAlignment="CENTER" textFill="#171717">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label4" layoutX="255.0" layoutY="394.0" text="Placeholder 4" textAlignment="CENTER" textFill="#171717">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Label5" layoutX="254.0" layoutY="448.0" text="Placeholder 5" textAlignment="CENTER" textFill="#171717">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="252.0" layoutY="97.0" text="Recent announcements" textAlignment="CENTER" textFill="#171717">
                      <font>
                         <Font name="Arial" size="57.0" />
                      </font>
                   </Label>
-                  <Label fx:id="Label3" layoutX="394.0" layoutY="333.0" text="Placeholder 3" textAlignment="CENTER" textFill="#171717">
+                  <Label fx:id="Label1" layoutX="257.0" layoutY="210.0" text="Placeholder 1" textAlignment="CENTER" textFill="#171717">
                      <font>
-                        <Font name="Arial" size="57.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label4" layoutX="392.0" layoutY="394.0" text="Placeholder 4" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="57.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label5" layoutX="391.0" layoutY="448.0" text="Placeholder 5" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="57.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label1" layoutX="252.0" layoutY="97.0" text="Recent announcements" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="57.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label21" layoutX="394.0" layoutY="210.0" onMouseClicked="#HandleFontSwap1" text="Placeholder 1" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="57.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
                   <Button fx:id="PageForwardButton" layoutX="939.0" layoutY="520.0" mnemonicParsing="false" text="Page Forward" textFill="#171717">

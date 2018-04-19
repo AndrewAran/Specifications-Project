@@ -86,12 +86,12 @@ public class EventsPageController implements Initializable{
             CreateButton.setVisible(false);
             RunEventButton.setVisible(false);
             StatisticsButton.setVisible(false);
-            Label1.setText(Main.eventArray[0]);
-            Label2.setText(Main.eventArray[1]);
-            Label3.setText(Main.eventArray[2]);
-            Label4.setText(Main.eventArray[3]);
-            Label5.setText(Main.eventArray[4]);
         }
+        Label1.setText(Main.eventArray[0]);
+        Label2.setText(Main.eventArray[1]);
+        Label3.setText(Main.eventArray[2]);
+        Label4.setText(Main.eventArray[3]);
+        Label5.setText(Main.eventArray[4]);
     }
 
     public void HandleHomeButton(ActionEvent mouseEvent) {
@@ -178,5 +178,20 @@ public class EventsPageController implements Initializable{
             System.out.println(e);
         }
     }
-}
 
+    public void HandleRunEventButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("RunEventPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void HandleDelete(MouseEvent mouseEvent) {
+        Label2.setVisible(false);
+    }
+}
