@@ -1,5 +1,3 @@
-package main.java;
-
 import javafx.fxml.FXML;
 
 import java.io.IOException;
@@ -36,12 +34,15 @@ public class CreateUserAccountController implements Initializable {
     @FXML
     private Button BButton;
 
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         assert BButton != null;
         assert CButton != null;
 
-        BButton.setOnAction(new javafx.event.EventHandler<>() {//When the back button is clicked it will return to the login page
+        BButton.setOnAction(new javafx.event.EventHandler<javafx.event.ActionEvent>() {//When the back button is clicked it will return to the login page
             @Override
             public void handle(javafx.event.ActionEvent event) {
                 try {//this switches the scene to the login page
@@ -56,11 +57,11 @@ public class CreateUserAccountController implements Initializable {
             }
         });
 
-        CButton.setOnAction(new javafx.event.EventHandler<>() {
+        CButton.setOnAction(new javafx.event.EventHandler<javafx.event.ActionEvent>() {
             @Override
             public void handle(javafx.event.ActionEvent event) {//This needs to have the database stuff to add the new user to the user list, currently it just brings you to the home page
                 try {
-                    Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                    Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
                     Scene UserFrameScene = new Scene(UserFrame);
                     Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     getUserFrame.setScene(UserFrameScene);

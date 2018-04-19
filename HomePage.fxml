@@ -30,7 +30,7 @@
                   </Button>
                   <ButtonBar layoutX="73.0" layoutY="57.0" prefHeight="40.0">
                     <buttons>
-                        <Button fx:id="HomeButton" mnemonicParsing="false" text="Home">
+                        <Button fx:id="HomeButton" mnemonicParsing="false" onMouseClicked="#HandleHomeButton" text="Home">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -43,7 +43,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="AnnouncementButton" mnemonicParsing="false" text="Announcements">
+                        <Button fx:id="AnnouncementButton" mnemonicParsing="false" onMouseClicked="#HandleAnnButton" text="Announcements">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -56,7 +56,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="EventsButton" mnemonicParsing="false" text="Events">
+                        <Button fx:id="EventsButton" mnemonicParsing="false" onMouseClicked="#HandleEventsButton" text="Events">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -69,7 +69,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="GroupsButton" mnemonicParsing="false" text="Groups">
+                        <Button fx:id="GroupsButton" mnemonicParsing="false" onMouseClicked="#HandleGroupsButton" text="Groups">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -82,7 +82,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="UserListButton" mnemonicParsing="false" text="User List">
+                        <Button fx:id="UserListButton" mnemonicParsing="false" onMouseClicked="#HandleUserListButton" text="User List">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -95,7 +95,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="ProfileButton" mnemonicParsing="false" text="Profile">
+                        <Button fx:id="ProfileButton" mnemonicParsing="false" onMouseClicked="#HandleProfileButton" text="Profile">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>
@@ -108,7 +108,7 @@
                               </LinearGradient>
                            </textFill>
                         </Button>
-                        <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
+                        <Button fx:id="LogoutButton" mnemonicParsing="false" onMouseClicked="#HandleLogOutButton" text="Logout">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="14.0" />
                            </font>

@@ -1,7 +1,4 @@
-package main.java;
-
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -89,111 +87,91 @@ public class EventsPageController implements Initializable{
             RunEventButton.setVisible(false);
             StatisticsButton.setVisible(false);
         }
-    HomeButton.setOnAction(new EventHandler<>() {
-        @Override
-        public void handle(ActionEvent event) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-        }
-    });
+    }
 
-    EventsButton.setOnAction(new EventHandler<>() {
-        @Override
-        public void handle(ActionEvent event) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
+    public void HandleHomeButton(ActionEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
         }
-    });
+    }
 
-    AnnouncementButton.setOnAction(new EventHandler<>() {
-        @Override
-        public void handle(ActionEvent event) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("AnnouncementsPage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
+    public void HandleAnnButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("AnnouncementsPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
         }
-    });
 
-    ProfileButton.setOnAction(new EventHandler<>() {
-        @Override
-        public void handle(ActionEvent event) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("ProfilePage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-        }
-    });
+    }
 
-    GroupsButton.setOnAction(new EventHandler<>() {
-        @Override
-        public void handle(ActionEvent event) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("GroupsPage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
+    public void HandleEventsButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
         }
-    });
+    }
 
-    UserListButton.setOnAction(new EventHandler<>() {
-        @Override
-        public void handle(ActionEvent event) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("UserListPage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
+    public void HandleGroupsButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("GroupsPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
         }
-    });
+    }
 
-    LogoutButton.setOnAction(new EventHandler<>() {
-        @Override
-        public void handle(ActionEvent event) {
-            LogInController.isAdmin = false;
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
+    public void HandleUserListButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("UserListPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
         }
-    });
+    }
+
+    public void HandleProfileButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("ProfilePage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void HandleLogOutButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 }
 
