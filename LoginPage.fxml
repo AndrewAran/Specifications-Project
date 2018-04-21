@@ -31,7 +31,7 @@
                      </font>
                   </Label>
                   <PasswordField layoutX="293.0" layoutY="309.0" />
-                  <TextField fx:id="UNTextField" layoutX="293.0" layoutY="256.0" />
+                  <TextField fx:id="UserNameTextField" layoutX="293.0" layoutY="256.0" />
                   <Button layoutX="262.0" layoutY="375.0" mnemonicParsing="false" onAction="#HandleLogInButtonAction" text="Log In " textFill="#171717">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
