@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.Stack;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +24,7 @@ public class LogInController implements Initializable {
     @FXML
     public TextField UserNameTextField;
     public static boolean isAdmin = false;
+    public static Stack BackStack;
 
     public void HandleCreateButtonAction(ActionEvent event){//currently it just goes to appropriate page
         try{//this switches the scene to the create user page
