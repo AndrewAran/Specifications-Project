@@ -17,7 +17,7 @@
             <items>
                 <AnchorPane fx:id="Us" style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
                     <children>
-                        <Button fx:id="BackButton" layoutX="99.0" layoutY="524.0" mnemonicParsing="false" text="Back">
+                        <Button fx:id="BackButton" layoutX="100.0" layoutY="524.0" mnemonicParsing="false" text="Back">
                             <font>
                                 <Font name="Arial Rounded MT Bold" size="12.0" />
                             </font>
@@ -110,7 +110,7 @@
                                         </LinearGradient>
                                     </textFill>
                                 </Button>
-                                <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
+                                <Button fx:id="LogoutButton" mnemonicParsing="false" prefHeight="27.0" text="Logout">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -125,7 +125,7 @@
                                 </Button>
                             </buttons>
                         </ButtonBar>
-                        <Label fx:id="Label1" layoutX="262.0" layoutY="97.0" text="Create/Edit Event" textAlignment="CENTER">
+                        <Label fx:id="Label1" layoutX="330.0" layoutY="97.0" text="Create/Edit Event" textAlignment="CENTER">
                             <font>
                                 <Font name="Arial Rounded MT Bold" size="57.0" />
                             </font>
@@ -140,20 +140,7 @@
                                 </LinearGradient>
                             </textFill>
                         </Label>
-                        <Button fx:id="EditButton" layoutX="667.0" layoutY="520.0" mnemonicParsing="false" text="Edit">
-                            <font>
-                                <Font name="Arial Rounded MT Bold" size="14.0" />
-                            </font>
-                            <textFill>
-                                <LinearGradient endX="1.0" endY="1.0">
-                                    <stops>
-                                        <Stop color="#31b2b9" />
-                                        <Stop color="BLACK" offset="1.0" />
-                                    </stops>
-                                </LinearGradient>
-                            </textFill>
-                        </Button>
-                        <Button fx:id="DeleteButton" layoutX="379.0" layoutY="520.0" mnemonicParsing="false" text="Delete">
+                        <Button fx:id="ConfirmButton" layoutX="675.0" layoutY="522.0" mnemonicParsing="false" text="Confirm">
                             <font>
                                 <Font name="Arial Rounded MT Bold" size="14.0" />
                             </font>
@@ -171,32 +158,32 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="528.0" layoutY="176.0" />
+                  <TextField fx:id="EventNameTextField" layoutX="528.0" layoutY="176.0" />
                   <Label layoutX="365.0" layoutY="227.0" prefHeight="23.0" prefWidth="117.0" text="Event Locations">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="528.0" layoutY="226.0" />
+                  <TextField fx:id="EventLocationTextField" layoutX="528.0" layoutY="226.0" />
                   <Label layoutX="365.0" layoutY="277.0" prefHeight="23.0" prefWidth="117.0" text="Event Date">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="528.0" layoutY="276.0" />
+                  <TextField fx:id="EventDateTextField" layoutX="528.0" layoutY="276.0" />
                   <Label layoutX="365.0" layoutY="330.0" prefHeight="23.0" prefWidth="117.0" text="Event Time">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="528.0" layoutY="329.0" />
+                  <TextField fx:id="EventTimeTextField" layoutX="528.0" layoutY="329.0" />
                   <Label layoutX="365.0" layoutY="379.0" prefHeight="23.0" prefWidth="149.0" text="Sorority Name">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="528.0" layoutY="378.0" />
-                  <TextArea layoutX="528.0" layoutY="416.0" prefHeight="104.0" prefWidth="342.0" />
+                  <TextField fx:id="EventSororityTextField" layoutX="528.0" layoutY="378.0" />
+                  <TextArea fx:id="EventDescriptionTextArea" layoutX="528.0" layoutY="416.0" prefHeight="90.0" prefWidth="318.0" />
                   <Label layoutX="365.0" layoutY="445.0" prefHeight="23.0" prefWidth="149.0" text="Event Description">
                      <font>
                         <Font size="15.0" />
