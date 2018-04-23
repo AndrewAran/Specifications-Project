@@ -22,6 +22,7 @@ public class Main extends Application {
     static public String[] eventArray;
     static public String[] announcementArray;
     public static Stack BackStack = new Stack();
+    public static int currentAccount;
 
 
     //This will launch the login frame starting the program
@@ -53,10 +54,11 @@ public class Main extends Application {
                 ");");
 
         stat.execute("CREATE TABLE profile" +
-                "(account_id SMALLINT UNSIGNED," +
+                "(account_id SMALLINT NOT NULL AUTO_INCREMENT," +
                 "firstname VARCHAR(30)," +
                 "lastname VARCHAR(30)," +
                 "email VARCHAR(30)," +
+                "phone VARCHAR(30)," +
                 "major VARCHAR(20)," +
                 "other VARCHAR(50)," +
                 "CONSTRAINT pk_profile PRIMARY KEY (account_id)," +
@@ -84,11 +86,10 @@ public class Main extends Application {
 
 
 
-        stat.execute("insert into account(username,password,uin) values('BJSIMMONS0221','12345', 815070221)");
         stat.execute("insert into account(username,password,uin) values('bjsimmons0221','12345', 815070221)");
         stat.execute("insert into account(username,password,uin) values('andrew','23456', 11111111)");
         stat.execute("insert into account(username,password,uin) values('shane','34567', 222222222)");
-        stat.execute("insert into profile values(1, 'Bryan','Simmons','fgcu@fgcu.edu', 'Software Engineering',null)");
+        stat.execute("insert into profile(firstname,lastname,email,phone,major,other) values('Bryan','Simmons','fgcu@fgcu.edu','555-555-5555', 'Software Engineering',null)");
         stat.execute("insert into event values(1, 'Group Presentation','classroom','2018-04-19', '11:00AM','Omega Chi','present')");
         stat.execute("insert into event values(2, 'Group Presentation2','classroom2','2018-04-19', '11:02AM','Omega Chi','present2')");
         stat.execute("insert into announcement values(1, 'This is a test announcement')");
