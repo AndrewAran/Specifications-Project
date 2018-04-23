@@ -42,6 +42,10 @@ public class ProfilePageController implements Initializable {
     @FXML
     public TextArea OtherInformationTextArea;
 
+
+    public String CurrentPage = "ProfilePage.fxml";
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -89,8 +93,8 @@ public class ProfilePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "HomePage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -104,8 +108,8 @@ public class ProfilePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "AnnouncementsPage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -120,8 +124,8 @@ public class ProfilePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "EventsPage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -134,9 +138,8 @@ public class ProfilePageController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
 
-            String Location = "GroupsPage.fxml";
-            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -150,8 +153,8 @@ public class ProfilePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "UserListPage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -165,8 +168,7 @@ public class ProfilePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "ProfilePage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -189,34 +191,18 @@ public class ProfilePageController implements Initializable {
     }
 
     public void HandleBackButton(MouseEvent mouseEvent) {
-        String Location;
-        if (Main.BackStack.empty()) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-
-                while (!Main.BackStack.empty()) {
-                    Main.BackStack.pop();
+            String Location;
+                Location = (Main.BackStack.pop()).toString();
+                try {
+                    Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
+                    Scene UserFrameScene = new Scene(UserFrame);
+                    Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                    getUserFrame.setScene(UserFrameScene);
+                    getUserFrame.show();
+                } catch (IOException e) {
+                    System.out.println(e);
                 }
-
-            } catch (IOException e) {
-                System.out.println(e);
             }
-        } else {
-            Location = (Main.BackStack.pop()).toString();
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-        }
-    }
 
 
     public void HandleConfirmButton(MouseEvent mouseEvent) throws Exception{
