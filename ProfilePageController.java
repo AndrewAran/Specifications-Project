@@ -15,22 +15,32 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class ProfilePageController implements Initializable {
 
-
+    Connection conn;
+    Statement stat;
+    ResultSet rs1;
+    String firstName;
+    String lastName;
+    String email;
+    String phone;
+    String major;
+    String otherInformation;
     @FXML
-    public javafx.scene.control.TextField FirstNameTextField;
+    public TextField FirstNameTextField;
     @FXML
-    public javafx.scene.control.TextField LastNameTextField;
+    public TextField LastNameTextField;
     @FXML
-    public javafx.scene.control.TextField EmailTextField;
+    public TextField EmailTextField;
     @FXML
-    public javafx.scene.control.TextField PhoneTextField;
+    public TextField PhoneTextField;
     @FXML
-    public javafx.scene.control.TextField MajorTextField;
+    public TextField MajorTextField;
     @FXML
-    public javafx.scene.control.TextField OtherInformationTextField;
+    public TextArea OtherInformationTextArea;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -38,15 +48,14 @@ public class ProfilePageController implements Initializable {
 
             Class.forName("org.h2.Driver");
 
-            Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
-            Statement stat = conn.createStatement();
-            ResultSet rs1;
-            String firstName =null;
-            String lastName=null;
-            String email=null;
-            String phone=null;
-            String major=null;
-            String otherInformation=null;
+            conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+            stat = conn.createStatement();
+            firstName =null;
+            lastName=null;
+            email=null;
+            phone=null;
+            major=null;
+            otherInformation=null;
 
             rs1 = stat.executeQuery("select * from profile where account_id = '" + Main.currentAccount + "'");
 
@@ -63,7 +72,7 @@ public class ProfilePageController implements Initializable {
             EmailTextField.setText(email);
             PhoneTextField.setText(phone);
             MajorTextField.setText(major);
-            OtherInformationTextField.setText(otherInformation);
+            OtherInformationTextArea.setText(otherInformation);
 
 
 
@@ -210,16 +219,46 @@ public class ProfilePageController implements Initializable {
     }
 
 
-    public void HandleConfirmButton(MouseEvent mouseEvent) {
-        FirstNameTextField.setText("this is a test");
-        /*try {
-            Parent UserFrame = FXMLLoader.load(getClass().getResource("UserListPage.fxml"));
-            Scene UserFrameScene = new Scene(UserFrame);
-            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            getUserFrame.setScene(UserFrameScene);
-            getUserFrame.show();
-        } catch (IOException e) {
-            System.out.println(e);
-        }*/
+    public void HandleConfirmButton(MouseEvent mouseEvent) throws Exception{
+
+        firstName =FirstNameTextField.getText();
+        lastName=LastNameTextField.getText();
+        email=EmailTextField.getText();
+        phone=PhoneTextField.getText();
+        major=MajorTextField.getText();
+        otherInformation=OtherInformationTextArea.getText();
+
+        Class.forName("org.h2.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+        Statement stat = conn.createStatement();
+        stat.execute("insert into profile(firstname,lastname,email,phone,major,other) values( '"+firstName+"'," +
+                " '"+lastName+"','"+email+"', '"+phone+"', '"+major+"', '"+otherInformation+"')");
+        String Location;
+        if (Main.BackStack.empty()) {
+            try {
+                Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                Scene UserFrameScene = new Scene(UserFrame);
+                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                getUserFrame.setScene(UserFrameScene);
+
+                while (!Main.BackStack.empty()) {
+                    Main.BackStack.pop();
+                }
+
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        } else {
+            Location = (Main.BackStack.pop()).toString();
+            try {
+                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
+                Scene UserFrameScene = new Scene(UserFrame);
+                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                getUserFrame.setScene(UserFrameScene);
+                getUserFrame.show();
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }
     }
 }
