@@ -16,7 +16,7 @@
             <items>
                 <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
                     <children>
-                        <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" onMouseClicked="#HandleBackButton" mnemonicParsing="false"  text="Back">
+                        <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#HandleBackButton" text="Back">
                             <font>
                                 <Font name="Arial" size="12.0" />
                             </font>
@@ -51,17 +51,17 @@
                                         <Font name="Arial" size="14.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="UserListButton" mnemonicParsing="false" text="User List">
-                                    <font>
-                                        <Font name="Arial" size="14.0" />
-                                    </font>
-                                </Button>
-                                <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
+                                <Button fx:id="UserListButton" mnemonicParsing="false" onMouseClicked="#HandleUserListButton" text="User List">
                                     <font>
                                         <Font name="Arial" size="14.0" />
                                     </font>
                                 </Button>
                                 <Button fx:id="ProfileButton" mnemonicParsing="false" text="Profile">
+                                    <font>
+                                        <Font name="Arial" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout">
                                     <font>
                                         <Font name="Arial" size="14.0" />
                                     </font>
@@ -103,7 +103,7 @@
                                 <Font name="Arial" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="CheckedInLabel" layoutX="227.0" layoutY="224.0" text="1" textAlignment="CENTER">
+                        <Label fx:id="CheckedInLabel" layoutX="227.0" layoutY="224.0" text="0" textAlignment="CENTER">
                             <font>
                                 <Font name="Arial" size="14.0" />
                             </font>
@@ -113,7 +113,7 @@
                                 <Font name="Arial" size="14.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="CheckInTextBox" layoutX="175.0" layoutY="301.0" promptText="E" text="Enter UIN" />
+                        <TextField fx:id="CheckInTextBox" layoutX="175.0" layoutY="301.0" onMouseClicked="#HandleCheckIn" promptText="E" text="Enter UIN" />
                         <TextField fx:id="CheckOutTextBox" layoutX="174.0" layoutY="349.0" text="Enter UIN" />
                         <Button fx:id="CheckInButton" layoutX="358.0" layoutY="304.0" mnemonicParsing="false" onMouseClicked="#HandleCheckIn" text="Confirm">
                             <font>

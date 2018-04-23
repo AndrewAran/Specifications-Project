@@ -4,15 +4,34 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UserListController implements Initializable {
     public ComboBox CBox;
+
+    public Label PlaceHolder1Label;
+    public Label PlaceHolder2Label;
+    public Label PlaceHolder3Label;
+    public Label PlaceHolder4Label;
+    public Label PlaceHolder5Label;
+    public Label PlaceHolder6Label;
+    public Label PlaceHolder7Label;
+    public Label PlaceHolder8Label;
+    public Label PlaceHolder9Label;
+    public Label PlaceHolder10Label;
+
+    public javafx.scene.control.Button SetUserButton;
+    public javafx.scene.control.Button SetAdminButton;
+    public javafx.scene.control.Button ViewEditButton;
+
+
 
     public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
@@ -99,7 +118,27 @@ public class UserListController implements Initializable {
         }
     }
 
-    public void initialize (URL url, ResourceBundle rb){
-    }
+    public void initialize (URL url, ResourceBundle rb) {
 
+        PlaceHolder1Label.setText("Andrew Aran");
+        PlaceHolder2Label.setText("Jane Doe");
+        PlaceHolder3Label.setVisible(false);
+        PlaceHolder4Label.setVisible(false);
+        PlaceHolder5Label.setVisible(false);
+        PlaceHolder6Label.setVisible(false);
+        PlaceHolder7Label.setVisible(false);
+        PlaceHolder8Label.setVisible(false);
+        PlaceHolder9Label.setVisible(false);
+        PlaceHolder10Label.setVisible(false);
+/*
+        CBox.setVisible(false);
+*/
+
+        if(!Main.isAdmin){
+            ViewEditButton.setVisible(false);
+            SetAdminButton.setVisible(false);
+            SetUserButton.setVisible(false);
+        }
+
+    }
 }

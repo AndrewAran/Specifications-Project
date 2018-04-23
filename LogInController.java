@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -23,17 +21,15 @@ public class LogInController implements Initializable {
 
     @FXML
     public TextField UserNameTextField;
-    public static boolean isAdmin = false;
-    public static Stack BackStack;
 
     public void HandleCreateButtonAction(ActionEvent event){//currently it just goes to appropriate page
         try{//this switches the scene to the create user page
-        Parent UserFrame = FXMLLoader.load(getClass().getResource("CreateAccountPage.fxml"));
-        Scene UserFrameScene = new Scene(UserFrame);
-        Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        getUserFrame.setScene(UserFrameScene);
-        getUserFrame.show();
-    }catch(IOException e){
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("CreateAccountPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        }catch(IOException e){
             System.out.println(e);
         }
     }
@@ -63,18 +59,18 @@ public class LogInController implements Initializable {
             System.out.println(rs1.getString("username"));
         }
         if(UserNameTextField.getText().equals("Andrew Aran")){
-            isAdmin = true;
+            Main.isAdmin = true;
         }
 
         try {//this switches the scene to the create user page
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
 

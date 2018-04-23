@@ -8,84 +8,84 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePageController">
-   <children>
-      <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
-               <children>
-                  <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" mnemonicParsing="false" text="Back" textFill="#171717">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="12.0" />
-                     </font>
-                  </Button>
-                  <ButtonBar layoutX="73.0" layoutY="57.0" prefHeight="40.0">
-                    <buttons>
-                        <Button fx:id="HomeButton" mnemonicParsing="false" onMouseClicked="#HandleHomeButton" text="Home" textFill="#171717">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
+    <children>
+        <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
+                    <children>
+                        <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#HandleBackButton" text="Back" textFill="#171717">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="12.0" />
+                            </font>
                         </Button>
-                        <Button fx:id="AnnouncementButton" mnemonicParsing="false" onMouseClicked="#HandleAnnButton" text="Announcements" textFill="#171717">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="EventsButton" mnemonicParsing="false" onMouseClicked="#HandleEventsButton" text="Events" textFill="#171717">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="GroupsButton" mnemonicParsing="false" onMouseClicked="#HandleGroupsButton" text="Groups" textFill="#171717">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="UserListButton" mnemonicParsing="false" onMouseClicked="#HandleUserListButton" text="User List" textFill="#171717">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="ProfileButton" mnemonicParsing="false" onMouseClicked="#HandleProfileButton" text="Profile" textFill="#171717">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="LogoutButton" mnemonicParsing="false" onMouseClicked="#HandleLogOutButton" text="Logout" textFill="#171717">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="14.0" />
-                           </font>
-                        </Button>
-                    </buttons>
-                  </ButtonBar>
-                  <Label fx:id="Label2" layoutX="204.0" layoutY="275.0" text="Swishes For Wishes          3/8/2015           4:00PM           Chi Omega            Basketball torunament" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label3" layoutX="201.0" layoutY="335.0" text=" Chi Omega Monthly meeting is canceled for April" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label4" layoutX="204.0" layoutY="391.0" text="Group Presentation          Room                4/19/2018          12:00PM             Present Projects" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label1" layoutX="91.0" layoutY="102.0" text="Recent events and announcements" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="57.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Label21" layoutX="204.0" layoutY="220.0" text="Spring Break, March 5-10" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" />
-   </children>
+                        <ButtonBar layoutX="73.0" layoutY="57.0" prefHeight="40.0">
+                            <buttons>
+                                <Button fx:id="HomeButton" mnemonicParsing="false" onMouseClicked="#HandleHomeButton" text="Home" textFill="#171717">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="AnnouncementButton" mnemonicParsing="false" onMouseClicked="#HandleAnnButton" text="Announcements" textFill="#171717">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="EventsButton" mnemonicParsing="false" onMouseClicked="#HandleEventsButton" text="Events" textFill="#171717">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="GroupsButton" mnemonicParsing="false" onMouseClicked="#HandleGroupsButton" text="Groups" textFill="#171717">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="UserListButton" mnemonicParsing="false" onMouseClicked="#HandleUserListButton" text="User List" textFill="#171717">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="ProfileButton" mnemonicParsing="false" onMouseClicked="#HandleProfileButton" text="Profile" textFill="#171717">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="LogoutButton" mnemonicParsing="false" onMouseClicked="#HandleLogOutButton" text="Logout" textFill="#171717">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                                    </font>
+                                </Button>
+                            </buttons>
+                        </ButtonBar>
+                        <Label fx:id="Label2" layoutX="204.0" layoutY="275.0" text="Swishes For Wishes          3/8/2015           4:00PM           Chi Omega            Basketball torunament" textAlignment="CENTER" textFill="#171717">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="Label3" layoutX="201.0" layoutY="335.0" text=" Chi Omega Monthly meeting is canceled for April" textAlignment="CENTER" textFill="#171717">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="Label4" layoutX="204.0" layoutY="391.0" text="Group Presentation          Room                4/19/2018          12:00PM             Present Projects" textAlignment="CENTER" textFill="#171717">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="Label1" layoutX="91.0" layoutY="102.0" text="Recent events and announcements" textAlignment="CENTER" textFill="#171717">
+                            <font>
+                                <Font name="Arial" size="57.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="Label21" layoutX="204.0" layoutY="220.0" text="Spring Break, March 5-10" textAlignment="CENTER" textFill="#171717">
+                            <font>
+                                <Font name="Arial" size="16.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <ButtonBar prefHeight="40.0" prefWidth="200.0" />
+    </children>
 </AnchorPane>

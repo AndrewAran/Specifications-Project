@@ -14,12 +14,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Stack;
 
 public class Main extends Application {
 
     static public int eventCount =-1;
     static public String[] eventArray;
     static public String[] announcementArray;
+    public static boolean isAdmin = false;
+    public static Stack BackStack;
+
     //This will launch the login frame starting the program
     @Override
     public void start(Stage stage) throws Exception {
@@ -85,6 +89,8 @@ public class Main extends Application {
         stat.execute("insert into event values(1, 'Group Presentation','classroom','2018-04-19', '11:00AM','Omega Chi','present')");
         stat.execute("insert into event values(2, 'Group Presentation2','classroom2','2018-04-19', '11:02AM','Omega Chi','present2')");
         stat.execute("insert into announcement values(1, 'This is a test announcement')");
+        stat.execute("insert into announcement values(2, ' Chi Omega Monthly meeting is canceled for April')");
+
         ResultSet rs;
 
         // print user/pass/uin from account

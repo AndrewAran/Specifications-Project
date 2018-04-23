@@ -97,4 +97,28 @@ public class ProfilePageController implements Initializable {
             System.out.println(e);
         }
     }
+
+    public void HandleConfirmButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("UserListPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void HandleBackButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
 }

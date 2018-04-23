@@ -152,7 +152,7 @@ public class AnnouncementsPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        if(!LogInController.isAdmin){
+        if(!Main.isAdmin){
             DeleteButton.setVisible(false);
             EditButton.setVisible(false);
             CreateButton.setVisible(false);
