@@ -140,7 +140,7 @@
                         </LinearGradient>
                      </textFill>
                   </Label>
-                  <Button fx:id="EditButton" layoutX="639.0" layoutY="468.0" mnemonicParsing="false" text="Confirm">
+                  <Button fx:id="ConfirmButton" layoutX="534.0" layoutY="468.0" mnemonicParsing="false" text="Confirm">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
@@ -153,20 +153,7 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="DeleteButton" layoutX="400.0" layoutY="468.0" mnemonicParsing="false" text="Delete">
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
-                     <textFill>
-                        <LinearGradient endX="1.0" endY="1.0">
-                           <stops>
-                              <Stop color="#31b2b9" />
-                              <Stop color="BLACK" offset="1.0" />
-                           </stops>
-                        </LinearGradient>
-                     </textFill>
-                  </Button>
-                  <TextArea layoutX="400.0" layoutY="208.0" prefHeight="199.0" prefWidth="344.0" />
+                  <TextArea fx:id="AnnouncementTextArea" layoutX="400.0" layoutY="208.0" prefHeight="199.0" prefWidth="344.0" />
                   <ComboBox layoutX="125.0" layoutY="295.0" prefWidth="150.0" promptText="Groups" />
                </children>
             </AnchorPane>
