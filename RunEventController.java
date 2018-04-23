@@ -10,41 +10,21 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class RunEventController implements Initializable {
+
+    public String CurrentPage = "RunEventPage.fxml";
 
     @FXML
     public javafx.scene.control.TextField CheckInTextBox;
     public javafx.scene.control.TextField CheckOutTextBox;
     public int checkIn = 0;
     public javafx.scene.control.Label CheckedInLabel;
-
-    public javafx.scene.control.Label CheckedIn1Label;
-    public javafx.scene.control.Label CheckedIn2Label;
-    public javafx.scene.control.Label CheckedIn3Label;
-    public javafx.scene.control.Label CheckedIn4Label;
-    public javafx.scene.control.Label CheckedIn5Label;
-    public javafx.scene.control.Label CheckedIn6Label;
-    public javafx.scene.control.Label CheckedIn7Label;
-    public javafx.scene.control.Label CheckedIn8Label;
-    public javafx.scene.control.Label CheckedIn9Label;
-    public javafx.scene.control.Label CheckedIn10Label;
-
-    public javafx.scene.control.Label CheckOut1Label;
-    public javafx.scene.control.Label CheckOut2Label;
-    public javafx.scene.control.Label CheckOut3Label;
-    public javafx.scene.control.Label CheckOut4Label;
-    public javafx.scene.control.Label CheckOut5Label;
-    public javafx.scene.control.Label CheckOut6Label;
-    public javafx.scene.control.Label CheckOut7Label;
-    public javafx.scene.control.Label CheckOut8Label;
-    public javafx.scene.control.Label CheckOut9Label;
-    public javafx.scene.control.Label CheckOut10Label;
-
-
-
-
 
     public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
@@ -132,58 +112,60 @@ public class RunEventController implements Initializable {
 
 
     public void HandleBackButton(MouseEvent mouseEvent) {
-        try {
-            Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
-            Scene UserFrameScene = new Scene(UserFrame);
-            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            getUserFrame.setScene(UserFrameScene);
-            getUserFrame.show();
-        } catch (IOException e) {
-            System.out.println(e);
+        String Location;
+        if(Main.BackStack.peek().equals(CurrentPage)){
+            String TempStore = Main.BackStack.pop().toString();
+            Location = (Main.BackStack.pop()).toString();
+            Main.BackStack.push(TempStore);
+            try {
+                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
+                Scene UserFrameScene = new Scene(UserFrame);
+                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                getUserFrame.setScene(UserFrameScene);
+                getUserFrame.show();
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+
+        }else{
+            Location = (Main.BackStack.pop()).toString();
+            try {
+                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
+                Scene UserFrameScene = new Scene(UserFrame);
+                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                getUserFrame.setScene(UserFrameScene);
+                getUserFrame.show();
+            } catch (IOException e) {
+                System.out.println(e);
+            }
         }
     }
+    public void HandleCheckIn(MouseEvent mouseEvent) throws Exception {
+        Class.forName("org.h2.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+        Statement stat = conn.createStatement();
 
-    public void initialize (URL url, ResourceBundle rb){
+        ResultSet rs1;
+        ResultSet rs2;
 
-        CheckedIn1Label.setVisible(false);
-        CheckedIn2Label.setVisible(false);
-        CheckedIn3Label.setVisible(false);
-        CheckedIn4Label.setVisible(false);
-        CheckedIn5Label.setVisible(false);
-        CheckedIn6Label.setVisible(false);
-        CheckedIn7Label.setVisible(false);
-        CheckedIn8Label.setVisible(false);
-        CheckedIn9Label.setVisible(false);
-        CheckedIn10Label.setVisible(false);
+        rs1 = stat.executeQuery("select uin from account");
+        while (rs1.next()){
+            if(CheckInTextBox.getText().equals(rs1.getString("uin"))){
+                String uniTemp = CheckInTextBox.getText();
+                rs2 = stat.executeQuery("select firstname, lastname from profile where account_id = '"+uniTemp+"'");
+                while(rs2.next()){
 
-        CheckOut1Label.setVisible(false);
-        CheckOut2Label.setVisible(false);
-        CheckOut3Label.setVisible(false);
-        CheckOut4Label.setVisible(false);
-        CheckOut5Label.setVisible(false);
-        CheckOut6Label.setVisible(false);
-        CheckOut7Label.setVisible(false);
-        CheckOut8Label.setVisible(false);
-        CheckOut9Label.setVisible(false);
-        CheckOut10Label.setVisible(false);
-
-
-
-    }
-
-    public void HandleCheckIn(MouseEvent mouseEvent) {
-        if(CheckInTextBox.getText().equals("815025602")){
-            CheckedIn1Label.setVisible(true);
-            CheckedIn1Label.setText("Andrew Aran ");
-            CheckedInLabel.setText(Integer.toString(++checkIn));
+                }
+            }
         }
     }
 
     public void HandleCheckOut(MouseEvent mouseEvent) {
-        if(CheckOutTextBox.getText().equals("815025602")){
-            CheckOut1Label.setVisible(true);
-            CheckOut1Label.setText("Andrew Aran");
-            CheckedInLabel.setText(Integer.toString(--checkIn));
-        }
+
     }
+
+    public void initialize (URL url, ResourceBundle rb){
+    }
+
+
 }
