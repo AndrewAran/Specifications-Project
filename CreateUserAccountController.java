@@ -2,6 +2,9 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXMLLoader;
@@ -12,24 +15,25 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class CreateUserAccountController implements Initializable {
 
     @FXML
-    public PasswordField CPWTextField;
+    public PasswordField ConfirmPasswordTextField;
 
     @FXML
     public PasswordField UINTextField;
 
     @FXML
-    public Button CButton;
+    public Button ConfirmButton;
 
     @FXML
-    public TextField UNTextField;
+    public TextField UserNameTextField;
 
     @FXML
-    public PasswordField PWTextField;
+    public PasswordField PasswordTextField;
 
     @FXML
     private Button BButton;
@@ -37,39 +41,50 @@ public class CreateUserAccountController implements Initializable {
 
 
 
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        assert BButton != null;
-        assert CButton != null;
+    }
 
-        BButton.setOnAction(new javafx.event.EventHandler<javafx.event.ActionEvent>() {//When the back button is clicked it will return to the login page
-            @Override
-            public void handle(javafx.event.ActionEvent event) {
-                try {//this switches the scene to the login page
-                    Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-                    Scene UserFrameScene = new Scene(UserFrame);
-                    Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    getUserFrame.setScene(UserFrameScene);
-                    getUserFrame.show();
-                } catch (IOException e) {
-                    System.out.println(e);
-                }
-            }
-        });
+    public void HandleConfirmButton(MouseEvent mouseEvent) throws Exception {
+        String tempUserName;
+        String tempPassword;
+        String tempUIN;
 
-        CButton.setOnAction(new javafx.event.EventHandler<javafx.event.ActionEvent>() {
-            @Override
-            public void handle(javafx.event.ActionEvent event) {//This needs to have the database stuff to add the new user to the user list, currently it just brings you to the home page
-                try {
-                    Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-                    Scene UserFrameScene = new Scene(UserFrame);
-                    Stage getUserFrame = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    getUserFrame.setScene(UserFrameScene);
-                    getUserFrame.show();
-                } catch (IOException e) {
-                    System.out.println(e);
-                }
-            }
-        });
+        if( UserNameTextField.getText().equals("")|| PasswordTextField.getText().equals("")||
+                ConfirmPasswordTextField.getText().equals("")||  UINTextField.getText().equals("")){
+            System.out.println("make sure no fields are empty");
+            return;
+
+        }
+        tempUserName = UserNameTextField.getText();
+        tempPassword = PasswordTextField.getText();
+        tempUIN = UINTextField.getText();
+
+            Class.forName("org.h2.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+            Statement stat = conn.createStatement();
+            stat.execute("insert into account(username,password,uin) values( '"+tempUserName+"', '"+tempPassword+"','"+tempUIN+"')");
+        System.out.println("qweqweweqw");
+
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void HandleBackButton(MouseEvent mouseEvent) {
+        try {//this switches the scene to the login page
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 }

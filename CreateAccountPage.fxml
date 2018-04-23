@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateUserAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateUserAccountController">
    <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
          <Label layoutX="375.0" layoutY="100.0" text="Create Account" textAlignment="CENTER" textFill="#171717">
@@ -16,9 +16,9 @@
                <Font name="Arial" size="57.0" />
             </font>
          </Label>
-         <PasswordField fx:id="PWTextField" layoutX="668.0" layoutY="278.0" />
-         <TextField fx:id="UNTextField" layoutX="668.0" layoutY="240.0" />
-         <Button fx:id="CButton" layoutX="710.0" layoutY="404.0" mnemonicParsing="false" text="Confirm" textFill="#171717">
+         <PasswordField fx:id="PasswordTextField" layoutX="668.0" layoutY="278.0" />
+         <TextField fx:id="UserNameTextField" layoutX="667.0" layoutY="240.0" />
+         <Button fx:id="ConfirmButton" layoutX="710.0" layoutY="404.0" mnemonicParsing="false" onMouseClicked="#HandleConfirmButton" text="Confirm" textFill="#171717">
             <font>
                <Font name="Arial Rounded MT Bold" size="12.0" />
             </font>
@@ -33,7 +33,7 @@
                <Font name="Arial" size="27.0" />
             </font>
          </Label>
-         <Button fx:id="BButton" layoutX="186.0" layoutY="495.0" mnemonicParsing="false" text="Back" textFill="#171717">
+         <Button fx:id="BButton" layoutX="186.0" layoutY="495.0" mnemonicParsing="false" onMouseClicked="#HandleBackButton" text="Back" textFill="#171717">
             <font>
                <Font name="Arial Rounded MT Bold" size="12.0" />
             </font>
@@ -48,7 +48,7 @@
                <Font name="Arial" size="27.0" />
             </font>
          </Label>
-         <PasswordField fx:id="CPWTextField" layoutX="668.0" layoutY="316.0" />
+         <PasswordField fx:id="ConfirmPasswordTextField" layoutX="668.0" layoutY="316.0" />
          <PasswordField fx:id="UINTextField" layoutX="668.0" layoutY="352.0" />
       </AnchorPane>
    </SplitPane>
