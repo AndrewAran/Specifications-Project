@@ -169,31 +169,27 @@ public class HomePageController implements Initializable {
 
     public void HandleBackButton(MouseEvent mouseEvent) {
         String Location;
-        if(Main.BackStack.peek().equals(CurrentPage)){
-            String TempStore = Main.BackStack.pop().toString();
-            Location = (Main.BackStack.pop()).toString();
-            Main.BackStack.push(TempStore);
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
+            if(Main.BackStack.empty()) {
+                try {
+                    Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                    Scene UserFrameScene = new Scene(UserFrame);
+                    Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                    getUserFrame.setScene(UserFrameScene);
+                    getUserFrame.show();
+                } catch (IOException e) {
+                    System.out.println(e);
+                }
+            }else{
+                try{
+                    Location = (Main.BackStack.pop()).toString();
+                    Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
                 Scene UserFrameScene = new Scene(UserFrame);
                 Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
                 getUserFrame.setScene(UserFrameScene);
                 getUserFrame.show();
             } catch (IOException e) {
-                System.out.println(e);
-            }
-
-        }else{
-            Location = (Main.BackStack.pop()).toString();
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
+            System.out.println(e);
+        }
             }
         }
     }
-}
