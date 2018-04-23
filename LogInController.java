@@ -24,6 +24,7 @@ public class LogInController implements Initializable {
     public TextField UserNameTextField;
     @FXML
     public TextField PasswordTextField;
+    public static boolean isAdmin = false;
 
     public void HandleCreateButtonAction(ActionEvent event){//currently it just goes to appropriate page
         try{//this switches the scene to the create user page
@@ -49,12 +50,14 @@ public class LogInController implements Initializable {
             if(UserNameTextField.getText().equals(rs1.getString("username"))){
                 System.out.println(rs1.getString("username"));
                 nameTemp = rs1.getString("username");
-                rs2 = stat.executeQuery("select password from account where username = '"+nameTemp+"'");
+                rs2 = stat.executeQuery("select password,account_id from account where username = '"+nameTemp+"'");
                 while (rs2.next()) {
                     passTemp = rs2.getString("password");
                     System.out.println(passTemp);
                     if(PasswordTextField.getText().equals(passTemp)){
                         System.out.println("success");
+                        Main.currentAccount =rs2.getInt("account_id");
+                        System.out.println(Main.currentAccount);
                         try {//this switches the scene to the create user page
                             Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
                             Scene UserFrameScene = new Scene(UserFrame);
@@ -76,7 +79,7 @@ public class LogInController implements Initializable {
          //   System.out.println(rs1.getString("username"));
         }
         if(UserNameTextField.getText().equals("Andrew Aran")){
-            Main.isAdmin = true;
+            isAdmin = true;
         }
 
 
