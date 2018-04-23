@@ -1,3 +1,4 @@
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -6,13 +7,70 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class ProfilePageController implements Initializable {
+
+
+    @FXML
+    public javafx.scene.control.TextField FirstNameTextField;
+    @FXML
+    public javafx.scene.control.TextField LastNameTextField;
+    @FXML
+    public javafx.scene.control.TextField EmailTextField;
+    @FXML
+    public javafx.scene.control.TextField PhoneTextField;
+    @FXML
+    public javafx.scene.control.TextField MajorTextField;
+    @FXML
+    public javafx.scene.control.TextField OtherInformationTextField;
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {}
+    public void initialize(URL url, ResourceBundle rb) {
+        try {
+
+            Class.forName("org.h2.Driver");
+
+            Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+            Statement stat = conn.createStatement();
+            ResultSet rs1;
+            String firstName =null;
+            String lastName=null;
+            String email=null;
+            String phone=null;
+            String major=null;
+            String otherInformation=null;
+
+            rs1 = stat.executeQuery("select * from profile where account_id = '" + Main.currentAccount + "'");
+
+            while (rs1.next()) {
+                firstName = rs1.getString("firstname");
+                lastName = rs1.getString("lastname");
+                email = rs1.getString("email");
+                phone = rs1.getString("phone");
+            }
+            System.out.println("working");
+            System.out.println(firstName);
+            FirstNameTextField.setText("this is a test");
+            LastNameTextField.setText(lastName);
+            EmailTextField.setText(email);
+            PhoneTextField.setText(phone);
+            MajorTextField.setText(major);
+            OtherInformationTextField.setText(otherInformation);
+
+
+
+        } catch (java.lang.Exception e) {
+
+        }
+    }
 
     public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
@@ -113,7 +171,7 @@ public class ProfilePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            while (!Main.BackStack.empty()){
+            while (!Main.BackStack.empty()) {
                 Main.BackStack.pop();
             }
         } catch (IOException e) {
@@ -123,21 +181,21 @@ public class ProfilePageController implements Initializable {
 
     public void HandleBackButton(MouseEvent mouseEvent) {
         String Location;
-        if(Main.BackStack.empty()){
+        if (Main.BackStack.empty()) {
             try {
                 Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
                 Scene UserFrameScene = new Scene(UserFrame);
                 Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
                 getUserFrame.setScene(UserFrameScene);
 
-                while (!Main.BackStack.empty()){
+                while (!Main.BackStack.empty()) {
                     Main.BackStack.pop();
                 }
 
             } catch (IOException e) {
                 System.out.println(e);
             }
-        }else{
+        } else {
             Location = (Main.BackStack.pop()).toString();
             try {
                 Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
@@ -153,7 +211,8 @@ public class ProfilePageController implements Initializable {
 
 
     public void HandleConfirmButton(MouseEvent mouseEvent) {
-        try {
+        FirstNameTextField.setText("this is a test");
+        /*try {
             Parent UserFrame = FXMLLoader.load(getClass().getResource("UserListPage.fxml"));
             Scene UserFrameScene = new Scene(UserFrame);
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
@@ -161,6 +220,6 @@ public class ProfilePageController implements Initializable {
             getUserFrame.show();
         } catch (IOException e) {
             System.out.println(e);
-        }
+        }*/
     }
 }

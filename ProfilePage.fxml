@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfilePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfilePageController">
     <children>
         <SplitPane layoutX="369.0" layoutY="241.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: blue; -fx-background-insets: 5; -fx-background-radius: 30; -fx-border-color: grey; -fx-border-width: 45; -fx-border-insets: 5; -fx-border-radius: 5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
@@ -52,7 +52,7 @@
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
                                 </Button>
-                                <Button fx:id="LogoutButton" mnemonicParsing="false" text="Logout" onMouseClicked="#HandleLogOutButton" textFill="#171717">
+                                <Button fx:id="LogoutButton" mnemonicParsing="false" onMouseClicked="#HandleLogOutButton" text="Logout" textFill="#171717">
                                     <font>
                                         <Font name="Arial Rounded MT Bold" size="14.0" />
                                     </font>
@@ -64,41 +64,47 @@
                                 <Font name="Arial" size="57.0" />
                             </font>
                         </Label>
-                        <Label fx:id="Label21" layoutX="465.0" layoutY="217.0" text="Name" textAlignment="CENTER" textFill="#171717">
+                        <Label fx:id="Label21" layoutX="457.0" layoutY="190.0" text="First Name" textAlignment="CENTER" textFill="#171717">
                             <font>
                                 <Font name="Arial" size="25.0" />
                             </font>
                         </Label>
-                        <Label fx:id="Label211" layoutX="467.0" layoutY="263.0" text="Email" textAlignment="CENTER" textFill="#171717">
+                        <Label fx:id="Label211" layoutX="481.0" layoutY="269.0" text="Email" textAlignment="CENTER" textFill="#171717">
                             <font>
                                 <Font name="Arial" size="25.0" />
                             </font>
                         </Label>
-                        <Label fx:id="Label212" layoutX="462.0" layoutY="312.0" text="Phone" textAlignment="CENTER" textFill="#171717">
+                        <Label fx:id="Label212" layoutX="476.0" layoutY="308.0" text="Phone" textAlignment="CENTER" textFill="#171717">
                             <font>
                                 <Font name="Arial" size="25.0" />
                             </font>
                         </Label>
-                        <Label fx:id="Label213" layoutX="462.0" layoutY="355.0" text="Major" textAlignment="CENTER" textFill="#171717">
+                        <Label fx:id="Label213" layoutX="481.0" layoutY="348.0" text="Major" textAlignment="CENTER" textFill="#171717">
                             <font>
                                 <Font name="Arial" size="25.0" />
                             </font>
                         </Label>
-                        <Label fx:id="Label214" layoutX="385.0" layoutY="396.0" text="Other Information" textAlignment="CENTER" textFill="#171717">
+                        <Label fx:id="Label214" layoutX="415.0" layoutY="390.0" text="Other Information" textAlignment="CENTER" textFill="#171717">
                             <font>
                                 <Font name="Arial" size="25.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="NameTextField" layoutX="620.0" layoutY="220.0" />
-                        <TextField fx:id="EmailTextField" layoutX="620.0" layoutY="266.0" />
-                        <TextField fx:id="PhoneTextField" layoutX="620.0" layoutY="315.0" />
-                        <TextField fx:id="MajorTextField" layoutX="620.0" layoutY="358.0" />
-                        <Button fx:id="ConfirmButton" layoutX="662.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#HandleConfirmButton" text="Confirm" textFill="#171717">
+                        <TextField fx:id="LastNameTextField" layoutX="621.0" layoutY="234.0" />
+                        <TextField fx:id="EmailTextField" layoutX="621.0" layoutY="272.0" />
+                        <TextField fx:id="PhoneTextField" layoutX="620.0" layoutY="311.0" />
+                        <TextField fx:id="MajorTextField" layoutX="621.0" layoutY="351.0" />
+                        <Button fx:id="ConfirmButton" layoutX="668.0" layoutY="455.0" mnemonicParsing="false" onMouseClicked="#HandleConfirmButton" text="Confirm" textFill="#171717">
                             <font>
                                 <Font name="Arial Rounded MT Bold" size="12.0" />
                             </font>
                         </Button>
-                        <TextArea fx:id="OtherInformationTextArea" layoutX="620.0" layoutY="396.0" prefHeight="46.0" prefWidth="182.0" />
+                        <TextArea fx:id="OtherInformationTextArea" layoutX="621.0" layoutY="390.0" prefHeight="46.0" prefWidth="182.0" />
+                  <Label fx:id="Label215" layoutX="457.0" layoutY="228.0" text="Last Name" textAlignment="CENTER" textFill="#171717">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="FirstName" layoutX="621.0" layoutY="195.0" />
                     </children>
                 </AnchorPane>
             </items>
