@@ -93,7 +93,7 @@
                         <TextField fx:id="EmailTextField" layoutX="620.0" layoutY="266.0" />
                         <TextField fx:id="PhoneTextField" layoutX="620.0" layoutY="315.0" />
                         <TextField fx:id="MajorTextField" layoutX="620.0" layoutY="358.0" />
-                        <Button fx:id="ConfirmButton" layoutX="662.0" layoutY="448.0" mnemonicParsing="false" text="Confirm" textFill="#171717">
+                        <Button fx:id="ConfirmButton" layoutX="662.0" layoutY="448.0" mnemonicParsing="false" onMouseClicked="#HandleConfirmButton" text="Confirm" textFill="#171717">
                             <font>
                                 <Font name="Arial Rounded MT Bold" size="12.0" />
                             </font>

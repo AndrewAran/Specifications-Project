@@ -92,7 +92,7 @@
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="PageBackButton" layoutX="823.0" layoutY="521.0" mnemonicParsing="false" text="Page Back" textFill="#171717">
+                  <Button fx:id="PageBackButton" layoutX="823.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#HandleBackButton" text="Page Back" textFill="#171717">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>

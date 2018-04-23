@@ -21,8 +21,8 @@ public class Main extends Application {
     static public int eventCount =-1;
     static public String[] eventArray;
     static public String[] announcementArray;
-    public static boolean isAdmin = false;
     public static Stack BackStack = new Stack();
+
 
     //This will launch the login frame starting the program
     @Override
@@ -45,7 +45,7 @@ public class Main extends Application {
         // stat.execute("runscript from 'init.sql'");
 
         stat.execute("CREATE TABLE account" +
-                "(account_id SMALLINT NOT NULL AUTO_INCREMENT," +
+                "(account_id SMALLINT UNSIGNED," +
                 "username VARCHAR(20)," +
                 "password VARCHAR(20)," +
                 "uin INT," +
@@ -84,11 +84,7 @@ public class Main extends Application {
 
 
 
-        stat.execute("insert into account(username,password,uin) values('BJSIMMONS0221','12345', 815070221)");
-
-        stat.execute("insert into account(username,password,uin) values('bjsimmons0221','12345', 815070221)");
-        stat.execute("insert into account(username,password,uin) values('andrew','23456', 11111111)");
-        stat.execute("insert into account(username,password,uin) values('shane','34567', 222222222)");
+        stat.execute("insert into account values(1, 'bjsimmons0221','12345', 815070221)");
         stat.execute("insert into profile values(1, 'Bryan','Simmons','fgcu@fgcu.edu', 'Software Engineering',null)");
         stat.execute("insert into event values(1, 'Group Presentation','classroom','2018-04-19', '11:00AM','Omega Chi','present')");
         stat.execute("insert into event values(2, 'Group Presentation2','classroom2','2018-04-19', '11:02AM','Omega Chi','present2')");

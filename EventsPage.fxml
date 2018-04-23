@@ -15,7 +15,7 @@
         <items>
           <AnchorPane style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
                <children>
-                  <Button fx:id="BackButton" layoutX="99.0" layoutY="524.0" mnemonicParsing="false" text="Back">
+                  <Button fx:id="BackButton" layoutX="99.0" layoutY="524.0" mnemonicParsing="false" onMouseClicked="#HandleBackButton" text="Back">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="12.0" />
                      </font>
@@ -119,7 +119,7 @@
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="StatisticsButton" layoutX="947.0" layoutY="145.0" mnemonicParsing="false" text="Event Statistics">
+                  <Button fx:id="StatisticsButton" layoutX="947.0" layoutY="145.0" mnemonicParsing="false" onMouseClicked="#HandleStatisticsButton" text="Event Statistics">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>

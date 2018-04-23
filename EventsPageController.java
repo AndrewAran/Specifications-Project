@@ -80,7 +80,7 @@ public class EventsPageController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if(!Main.isAdmin){
+        if(!LogInController.isAdmin){
             DeleteButton.setVisible(false);
             EditButton.setVisible(false);
             CreateButton.setVisible(false);
@@ -94,13 +94,16 @@ public class EventsPageController implements Initializable{
         Label5.setText(Main.eventArray[4]);
     }
 
-    public void HandleHomeButton(ActionEvent mouseEvent) {
+    public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
-            Parent UserFrame = FXMLLoader.load(getClass().getResource("EventsPage.fxml"));
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             Scene UserFrameScene = new Scene(UserFrame);
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            String Location = "HomePage.fxml";
+            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -113,6 +116,9 @@ public class EventsPageController implements Initializable{
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            String Location = "AnnouncementsPage.fxml";
+            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -126,6 +132,9 @@ public class EventsPageController implements Initializable{
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            String Location = "EventsPage.fxml";
+            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -138,6 +147,9 @@ public class EventsPageController implements Initializable{
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            String Location = "GroupsPage.fxml";
+            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -150,6 +162,9 @@ public class EventsPageController implements Initializable{
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            String Location = "UserListPage.fxml";
+            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -162,6 +177,9 @@ public class EventsPageController implements Initializable{
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            String Location = "ProfilePage.fxml";
+            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -174,8 +192,42 @@ public class EventsPageController implements Initializable{
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            while (!Main.BackStack.empty()){
+                Main.BackStack.pop();
+            }
         } catch (IOException e) {
             System.out.println(e);
+        }
+    }
+
+    public void HandleBackButton(MouseEvent mouseEvent) {
+        String Location;
+        if(Main.BackStack.empty()){
+            try {
+                Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                Scene UserFrameScene = new Scene(UserFrame);
+                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                getUserFrame.setScene(UserFrameScene);
+
+                while (!Main.BackStack.empty()){
+                    Main.BackStack.pop();
+                }
+
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }else{
+            Location = (Main.BackStack.pop()).toString();
+            try {
+                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
+                Scene UserFrameScene = new Scene(UserFrame);
+                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                getUserFrame.setScene(UserFrameScene);
+                getUserFrame.show();
+            } catch (IOException e) {
+                System.out.println(e);
+            }
         }
     }
 
@@ -186,6 +238,24 @@ public class EventsPageController implements Initializable{
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            String Location = "RunEventPage.fxml";
+            Main.BackStack.push(Location);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void HandleStatisticsButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("StatisticsPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+
+            String Location = "StatisticsPage.fxml";
+            Main.BackStack.push(Location);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -194,4 +264,6 @@ public class EventsPageController implements Initializable{
     public void HandleDelete(MouseEvent mouseEvent) {
         Label2.setVisible(false);
     }
+
+
 }

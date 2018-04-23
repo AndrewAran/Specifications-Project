@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.Stack;
+import java.util.prefs.BackingStoreException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +22,9 @@ public class LogInController implements Initializable {
 
     @FXML
     public TextField UserNameTextField;
+
+    public static boolean isAdmin = false;
+
 
     public void HandleCreateButtonAction(ActionEvent event){//currently it just goes to appropriate page
         try{//this switches the scene to the create user page
@@ -59,7 +63,7 @@ public class LogInController implements Initializable {
             System.out.println(rs1.getString("username"));
         }
         if(UserNameTextField.getText().equals("Andrew Aran")){
-            Main.isAdmin = true;
+            isAdmin = true;
         }
 
         try {//this switches the scene to the create user page
@@ -77,7 +81,6 @@ public class LogInController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
     }
 
 }
