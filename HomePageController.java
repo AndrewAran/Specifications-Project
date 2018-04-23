@@ -158,6 +158,10 @@ public class HomePageController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+
+            while (!Main.BackStack.empty()){
+                Main.BackStack.pop();
+            }
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -171,7 +175,11 @@ public class HomePageController implements Initializable {
                 Scene UserFrameScene = new Scene(UserFrame);
                 Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
                 getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
+
+                while (!Main.BackStack.empty()){
+                    Main.BackStack.pop();
+                }
+
             } catch (IOException e) {
                 System.out.println(e);
             }
