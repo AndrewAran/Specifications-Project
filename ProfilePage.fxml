@@ -99,12 +99,12 @@
                             </font>
                         </Button>
                         <TextArea fx:id="OtherInformationTextArea" layoutX="621.0" layoutY="390.0" prefHeight="46.0" prefWidth="182.0" />
-                  <Label fx:id="Label215" layoutX="457.0" layoutY="228.0" text="Last Name" textAlignment="CENTER" textFill="#171717">
-                     <font>
-                        <Font name="Arial" size="25.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="FirstNameTextField" layoutX="621.0" layoutY="195.0" />
+                        <Label fx:id="Label215" layoutX="457.0" layoutY="228.0" text="Last Name" textAlignment="CENTER" textFill="#171717">
+                            <font>
+                                <Font name="Arial" size="25.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="FirstNameTextField" layoutX="621.0" layoutY="195.0" />
                     </children>
                 </AnchorPane>
             </items>
