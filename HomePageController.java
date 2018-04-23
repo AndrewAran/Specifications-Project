@@ -54,6 +54,8 @@ public class HomePageController implements Initializable {
     @FXML
     public Label Label5;
 
+    public String CurrentPage = "HomePage.fxml";
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -67,8 +69,8 @@ public class HomePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "HomePage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -82,8 +84,8 @@ public class HomePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "AnnouncementsPage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -98,8 +100,8 @@ public class HomePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "EventsPage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -113,8 +115,8 @@ public class HomePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "GroupsPage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -128,8 +130,8 @@ public class HomePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "UserListPage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -143,8 +145,7 @@ public class HomePageController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            String Location = "ProfilePage.fxml";
-            Main.BackStack.push(Location);
+            Main.BackStack.push(CurrentPage);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -168,20 +169,20 @@ public class HomePageController implements Initializable {
 
     public void HandleBackButton(MouseEvent mouseEvent) {
         String Location;
-        if(Main.BackStack.empty()){
+        if(Main.BackStack.peek().equals(CurrentPage)){
+            String TempStore = Main.BackStack.pop().toString();
+            Location = (Main.BackStack.pop()).toString();
+            Main.BackStack.push(TempStore);
             try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
                 Scene UserFrameScene = new Scene(UserFrame);
                 Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
                 getUserFrame.setScene(UserFrameScene);
-
-                while (!Main.BackStack.empty()){
-                    Main.BackStack.pop();
-                }
-
+                getUserFrame.show();
             } catch (IOException e) {
                 System.out.println(e);
             }
+
         }else{
             Location = (Main.BackStack.pop()).toString();
             try {

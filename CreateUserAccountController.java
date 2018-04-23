@@ -59,10 +59,10 @@ public class CreateUserAccountController implements Initializable {
         tempPassword = PasswordTextField.getText();
         tempUIN = UINTextField.getText();
 
-            Class.forName("org.h2.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
-            Statement stat = conn.createStatement();
-            stat.execute("insert into account(username,password,uin) values( '"+tempUserName+"', '"+tempPassword+"','"+tempUIN+"')");
+        Class.forName("org.h2.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+        Statement stat = conn.createStatement();
+        stat.execute("insert into account(username,password,uin) values( '"+tempUserName+"', '"+tempPassword+"','"+tempUIN+"')");
         System.out.println("qweqweweqw");
 
         try {

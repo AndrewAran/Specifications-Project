@@ -33,6 +33,8 @@ public class RunEventController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -45,6 +47,8 @@ public class RunEventController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -57,6 +61,8 @@ public class RunEventController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -69,6 +75,8 @@ public class RunEventController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -81,6 +89,8 @@ public class RunEventController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -93,6 +103,8 @@ public class RunEventController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
+
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -105,6 +117,7 @@ public class RunEventController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
+            Main.BackStack.push(CurrentPage);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -113,21 +126,6 @@ public class RunEventController implements Initializable {
 
     public void HandleBackButton(MouseEvent mouseEvent) {
         String Location;
-        if(Main.BackStack.peek().equals(CurrentPage)){
-            String TempStore = Main.BackStack.pop().toString();
-            Location = (Main.BackStack.pop()).toString();
-            Main.BackStack.push(TempStore);
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-
-        }else{
             Location = (Main.BackStack.pop()).toString();
             try {
                 Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
@@ -139,7 +137,7 @@ public class RunEventController implements Initializable {
                 System.out.println(e);
             }
         }
-    }
+
     public void HandleCheckIn(MouseEvent mouseEvent) throws Exception {
         Class.forName("org.h2.Driver");
         Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");

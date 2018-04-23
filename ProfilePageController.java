@@ -205,46 +205,19 @@ public class ProfilePageController implements Initializable {
             }
 
 
-    public void HandleConfirmButton(MouseEvent mouseEvent) throws Exception{
+    public void HandleConfirmButton(MouseEvent mouseEvent) throws Exception {
 
-        firstName =FirstNameTextField.getText();
-        lastName=LastNameTextField.getText();
-        email=EmailTextField.getText();
-        phone=PhoneTextField.getText();
-        major=MajorTextField.getText();
-        otherInformation=OtherInformationTextArea.getText();
+        firstName = FirstNameTextField.getText();
+        lastName = LastNameTextField.getText();
+        email = EmailTextField.getText();
+        phone = PhoneTextField.getText();
+        major = MajorTextField.getText();
+        otherInformation = OtherInformationTextArea.getText();
 
         Class.forName("org.h2.Driver");
         Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
         Statement stat = conn.createStatement();
-        stat.execute("insert into profile(firstname,lastname,email,phone,major,other) values( '"+firstName+"'," +
-                " '"+lastName+"','"+email+"', '"+phone+"', '"+major+"', '"+otherInformation+"')");
-        String Location;
-        if (Main.BackStack.empty()) {
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-
-                while (!Main.BackStack.empty()) {
-                    Main.BackStack.pop();
-                }
-
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-        } else {
-            Location = (Main.BackStack.pop()).toString();
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-        }
+        stat.execute("insert into profile(firstname,lastname,email,phone,major,other) values( '" + firstName + "'," +
+                " '" + lastName + "','" + email + "', '" + phone + "', '" + major + "', '" + otherInformation + "')");
     }
 }

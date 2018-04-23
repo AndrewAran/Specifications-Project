@@ -14,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -70,26 +69,19 @@ public class LogInController implements Initializable {
                     }
                 }
                 break;
-
-
             }
             if(rs1.isLast()){
                 System.out.println("notfound");
             }
-         //   System.out.println(rs1.getString("username"));
+            //   System.out.println(rs1.getString("username"));
         }
         if(UserNameTextField.getText().equals("Andrew Aran")){
             isAdmin = true;
         }
-
-
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
-
 }

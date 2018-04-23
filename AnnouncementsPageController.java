@@ -62,7 +62,7 @@ public class AnnouncementsPageController implements Initializable {
 
     public Label Label5;
 
-
+    public String CurrentPage = "AnnouncementsPage.fxml";
 
     public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
@@ -173,20 +173,20 @@ public class AnnouncementsPageController implements Initializable {
 
     public void HandleBackButton(MouseEvent mouseEvent) {
         String Location;
-        if(Main.BackStack.empty()){
+        if(Main.BackStack.peek().equals(CurrentPage)){
+            String TempStore = Main.BackStack.pop().toString();
+            Location = (Main.BackStack.pop()).toString();
+            Main.BackStack.push(TempStore);
             try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
                 Scene UserFrameScene = new Scene(UserFrame);
                 Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
                 getUserFrame.setScene(UserFrameScene);
-
-                while (!Main.BackStack.empty()){
-                    Main.BackStack.pop();
-                }
-
+                getUserFrame.show();
             } catch (IOException e) {
                 System.out.println(e);
             }
+
         }else{
             Location = (Main.BackStack.pop()).toString();
             try {
@@ -200,7 +200,6 @@ public class AnnouncementsPageController implements Initializable {
             }
         }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
