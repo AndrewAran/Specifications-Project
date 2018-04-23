@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -79,6 +80,8 @@ public class EventsPageController implements Initializable{
     public Label Label5;
 
     public boolean isSelceted = false;
+
+    public static int currentEvent;
 
 
 
@@ -256,7 +259,7 @@ public class EventsPageController implements Initializable{
 
     public void HandleCreateButton(MouseEvent mouseEvent) {
         try {
-            Parent UserFrame = FXMLLoader.load(getClass().getResource("StatisticsPage.fxml"));
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("CreateEventPagePage.fxml"));
             Scene UserFrameScene = new Scene(UserFrame);
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
@@ -266,5 +269,63 @@ public class EventsPageController implements Initializable{
         } catch (IOException e) {
             System.out.println(e);
         }
+    }
+
+    public void HandleEditButton(MouseEvent mouseEvent) {
+    }
+
+    public void HandleLabel1(MouseEvent mouseEvent) {
+        if(isSelceted) {
+            Label2.setTextFill(Color.BLACK);
+            Label3.setTextFill(Color.BLACK);
+            Label4.setTextFill(Color.BLACK);
+            Label5.setTextFill(Color.BLACK);
+        }
+            Label1.setTextFill(Color.RED);
+            isSelceted = true;
+    }
+
+    public void HandleLabel2(MouseEvent mouseEvent) {
+        if(isSelceted) {
+            Label1.setTextFill(Color.BLACK);
+            Label3.setTextFill(Color.BLACK);
+            Label4.setTextFill(Color.BLACK);
+            Label5.setTextFill(Color.BLACK);
+        }
+        Label2.setTextFill(Color.RED);
+        isSelceted = true;
+    }
+
+    public void HandleLabel3(MouseEvent mouseEvent) {
+        if(isSelceted) {
+            Label2.setTextFill(Color.BLACK);
+            Label1.setTextFill(Color.BLACK);
+            Label4.setTextFill(Color.BLACK);
+            Label5.setTextFill(Color.BLACK);
+        }
+        Label3.setTextFill(Color.RED);
+        isSelceted = true;
+    }
+
+    public void HandleLabel4(MouseEvent mouseEvent) {
+        if(isSelceted) {
+            Label2.setTextFill(Color.BLACK);
+            Label3.setTextFill(Color.BLACK);
+            Label1.setTextFill(Color.BLACK);
+            Label5.setTextFill(Color.BLACK);
+        }
+        Label4.setTextFill(Color.RED);
+        isSelceted = true;
+    }
+
+    public void HandleLabel5(MouseEvent mouseEvent) {
+        if(isSelceted) {
+            Label2.setTextFill(Color.BLACK);
+            Label3.setTextFill(Color.BLACK);
+            Label4.setTextFill(Color.BLACK);
+            Label1.setTextFill(Color.BLACK);
+        }
+        Label5.setTextFill(Color.RED);
+        isSelceted = true;
     }
 }
