@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -160,106 +161,8 @@
                                 <Font name="Arial" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="CheckedIn1Label" layoutX="643.0" layoutY="267.0" text="CheckedIn1" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn2Label" layoutX="642.0" layoutY="289.0" text="CheckedIn2" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn3Label" layoutX="642.0" layoutY="313.0" text="CheckedIn3" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn4Label" layoutX="642.0" layoutY="338.0" text="CheckedIn4" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn5Label" layoutX="641.0" layoutY="362.0" text="CheckedIn5" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn6Label" layoutX="641.0" layoutY="385.0" text="CheckedIn6" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn7Label" layoutX="640.0" layoutY="406.0" text="CheckedIn7" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut1Label" layoutX="869.0" layoutY="266.0" text="CheckOut1" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut2Label" layoutX="869.0" layoutY="290.0" text="CheckOut2" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut3Label" layoutX="869.0" layoutY="316.0" text="CheckOut3" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut4Label" layoutX="869.0" layoutY="341.0" text="CheckOut4" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut5Label" layoutX="870.0" layoutY="363.0" text="CheckOut5" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut6Label" layoutX="871.0" layoutY="383.0" text="CheckOut6" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn8Label" layoutX="640.0" layoutY="424.0" text="CheckedIn8" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn9Label" layoutX="641.0" layoutY="443.0" text="CheckedIn9" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckedIn10Label" layoutX="642.0" layoutY="465.0" text="CheckedIn10" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut7Label" layoutX="872.0" layoutY="402.0" text="CheckOut7" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut8Label" layoutX="873.0" layoutY="423.0" text="CheckOut8" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut9Label" layoutX="873.0" layoutY="441.0" text="CheckOut9" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="CheckOut10Label" layoutX="872.0" layoutY="464.0" text="CheckOut10" textAlignment="CENTER">
-                            <font>
-                                <Font name="Arial" size="14.0" />
-                            </font>
-                        </Label>
+                  <ListView fx:id="ChedkedInList" layoutX="588.0" layoutY="252.0" prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="CheckedOutList" layoutX="815.0" layoutY="252.0" prefHeight="200.0" prefWidth="200.0" />
                     </children>
                 </AnchorPane>
             </items>

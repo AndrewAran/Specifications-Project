@@ -14,7 +14,7 @@
             <items>
                 <AnchorPane fx:id="Us" style="-fx-background-color: #778899; -fx-background-insets: 45; -fx-background-radius: 30; -fx-border-color: #003082; -fx-border-width: 45;">
                     <children>
-                        <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" mnemonicParsing="false" text="Back">
+                        <Button fx:id="BackButton" layoutX="99.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#HandleBackButton" text="Back">
                             <font>
                                 <Font name="Arial Rounded MT Bold" size="12.0" />
                             </font>
