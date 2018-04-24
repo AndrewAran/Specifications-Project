@@ -1,3 +1,7 @@
+/*
+Controller for Groups Page Controller Class
+*/
+
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;

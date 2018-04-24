@@ -1,45 +1,44 @@
 /*
-Controller for User Class
+Controller for create Announcements Page
 */
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-//import sun.rmi.runtime.Log;
 
-import java.awt.*;
+import javafx.scene.control.TextArea;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class UserListController implements Initializable {
+public class CreateAnnouncementPageController implements Initializable {
 
-    public String CurrentPage = "UserListPage.fxml";
+    Connection conn;
+    Statement stat;
+    ResultSet rs1;
+    String announcementDescription = null;
 
-    public ComboBox CBox;
-
-    public Label PlaceHolder1Label;
-    public Label PlaceHolder2Label;
-    public Label PlaceHolder3Label;
-    public Label PlaceHolder4Label;
-    public Label PlaceHolder5Label;
-    public Label PlaceHolder6Label;
-    public Label PlaceHolder7Label;
-    public Label PlaceHolder8Label;
-    public Label PlaceHolder9Label;
-    public Label PlaceHolder10Label;
-
-    public javafx.scene.control.Button SetUserButton;
-    public javafx.scene.control.Button SetAdminButton;
-    public javafx.scene.control.Button ViewEditButton;
+    @FXML
+    public TextArea AnnouncementTextArea;
 
 
+    public String CurrentPage = "CreateAnnouncementPage.fxml";
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }
 
     public void HandleHomeButton(MouseEvent mouseEvent) {
         try {
@@ -94,7 +93,6 @@ public class UserListController implements Initializable {
             Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
-
             Main.BackStack.push(CurrentPage);
 
         } catch (IOException e) {
@@ -126,7 +124,6 @@ public class UserListController implements Initializable {
             getUserFrame.show();
 
             Main.BackStack.push(CurrentPage);
-
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -140,7 +137,7 @@ public class UserListController implements Initializable {
             getUserFrame.setScene(UserFrameScene);
             getUserFrame.show();
 
-            while (!Main.BackStack.empty()){
+            while (!Main.BackStack.empty()) {
                 Main.BackStack.pop();
             }
         } catch (IOException e) {
@@ -149,40 +146,36 @@ public class UserListController implements Initializable {
     }
 
     public void HandleBackButton(MouseEvent mouseEvent) {
-        String Location;
-            Location = (Main.BackStack.pop()).toString();
-            try {
-                Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
-                Scene UserFrameScene = new Scene(UserFrame);
-                Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-                getUserFrame.setScene(UserFrameScene);
-                getUserFrame.show();
-            } catch (IOException e) {
-                System.out.println(e);
+            String Location;
+                Location = (Main.BackStack.pop()).toString();
+                try {
+                    Parent UserFrame = FXMLLoader.load(getClass().getResource(Location));
+                    Scene UserFrameScene = new Scene(UserFrame);
+                    Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                    getUserFrame.setScene(UserFrameScene);
+                    getUserFrame.show();
+                } catch (IOException e) {
+                    System.out.println(e);
+                }
             }
+
+
+    public void HandleConfirmButton(MouseEvent mouseEvent) throws Exception {
+
+        announcementDescription = AnnouncementTextArea.getText();
+
+        Class.forName("org.h2.Driver");
+        Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+        Statement stat = conn.createStatement();
+        stat.execute("insert into announcement(description) values( '" + announcementDescription + "')");
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("AnnouncementsPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
         }
-
-    public void initialize (URL url, ResourceBundle rb) {
-
-        PlaceHolder1Label.setText("Andrew Aran");
-        PlaceHolder2Label.setText("Jane Doe");
-        PlaceHolder3Label.setVisible(false);
-        PlaceHolder4Label.setVisible(false);
-        PlaceHolder5Label.setVisible(false);
-        PlaceHolder6Label.setVisible(false);
-        PlaceHolder7Label.setVisible(false);
-        PlaceHolder8Label.setVisible(false);
-        PlaceHolder9Label.setVisible(false);
-        PlaceHolder10Label.setVisible(false);
-/*
-        CBox.setVisible(false);
-*/
-
-        if(!LogInController.isAdmin){
-            ViewEditButton.setVisible(false);
-            SetAdminButton.setVisible(false);
-            SetUserButton.setVisible(false);
-        }
-
     }
 }

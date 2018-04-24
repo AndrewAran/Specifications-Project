@@ -1,3 +1,7 @@
+/*
+Controller for Announcements Page
+*/
+
 import javafx.fxml.FXML;
 
 import java.io.IOException;
@@ -63,7 +67,6 @@ public class CreateUserAccountController implements Initializable {
         Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
         Statement stat = conn.createStatement();
         stat.execute("insert into account(username,password,uin) values( '"+tempUserName+"', '"+tempPassword+"','"+tempUIN+"')");
-        System.out.println("qweqweweqw");
 
         try {
             Parent UserFrame = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));

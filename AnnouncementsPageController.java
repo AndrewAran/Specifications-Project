@@ -1,3 +1,7 @@
+/*
+Controller for Announcements Page
+*/
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,10 +16,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class AnnouncementsPageController implements Initializable {
-
+    static public String[] announcementArray;
     @FXML
     public Button BackButton;
 
@@ -200,9 +208,22 @@ public class AnnouncementsPageController implements Initializable {
             }
         }
     }
+    public void HandleCreateButton(MouseEvent mouseEvent) {
+        try {
+            Parent UserFrame = FXMLLoader.load(getClass().getResource("CreateAnnouncementPage.fxml"));
+            Scene UserFrameScene = new Scene(UserFrame);
+            Stage getUserFrame = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            getUserFrame.setScene(UserFrameScene);
+            getUserFrame.show();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+    public void HandleEditButton(MouseEvent mouseEvent) {
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        System.out.println("test1");
         if(!LogInController.isAdmin){
             DeleteButton.setVisible(false);
             EditButton.setVisible(false);
@@ -210,7 +231,27 @@ public class AnnouncementsPageController implements Initializable {
 /*            RunEventButton.setVisible(false);
             StatisticsButton.setVisible(false);*/
         }
+        try {
 
+            Class.forName("org.h2.Driver");
+
+            Connection conn = DriverManager.getConnection("jdbc:h2:~/H2Test");
+            Statement stat = conn.createStatement();
+
+            ResultSet rs = stat.executeQuery("select description from announcement");
+            int i=0;
+            while (rs.next()) {
+                System.out.println("test2");
+                announcementArray[i] = rs.getString("description");
+                System.out.println(announcementArray[i]);
+                i++;
+            }
+
+
+
+        } catch (java.lang.Exception e) {
+
+        }
         Label1.setText(Main.announcementArray[0]);
         Label2.setText(Main.announcementArray[1]);
         Label3.setText(Main.announcementArray[2]);

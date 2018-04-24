@@ -1,3 +1,6 @@
+/*
+Controller for Log In Page*/
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -49,13 +52,14 @@ public class LogInController implements Initializable {
             if(UserNameTextField.getText().equals(rs1.getString("username"))){
                 System.out.println(rs1.getString("username"));
                 nameTemp = rs1.getString("username");
-                rs2 = stat.executeQuery("select password,account_id from account where username = '"+nameTemp+"'");
+                rs2 = stat.executeQuery("select password,account_id,admin from account where username = '"+nameTemp+"'");
                 while (rs2.next()) {
                     passTemp = rs2.getString("password");
                     System.out.println(passTemp);
                     if(PasswordTextField.getText().equals(passTemp)){
                         System.out.println("success");
                         Main.currentAccount =rs2.getInt("account_id");
+                        isAdmin = rs2.getBoolean("admin");
                         System.out.println(Main.currentAccount);
                         try {//this switches the scene to the create user page
                             Parent UserFrame = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

@@ -50,6 +50,7 @@ public class Main extends Application {
                 "username VARCHAR(20)," +
                 "password VARCHAR(20)," +
                 "uin INT," +
+                "admin BOOLEAN," +
                 "CONSTRAINT pk_account PRIMARY KEY (account_id)" +
                 ");");
 
@@ -79,14 +80,14 @@ public class Main extends Application {
 
 
         stat.execute("CREATE TABLE announcement" +
-                "(announcement_id SMALLINT UNSIGNED," +
+                "(announcement_id SMALLINT NOT NULL AUTO_INCREMENT," +
                 "description VARCHAR(50)," +
                 "CONSTRAINT pk_announcement PRIMARY KEY (announcement_id)," +
                 ");");
 
 
 
-        stat.execute("insert into account(username,password,uin) values('bjsimmons0221','12345', 815070221)");
+        stat.execute("insert into account(username,password,uin,admin) values('bjsimmons0221','12345', 815070221,true)");
         stat.execute("insert into account(username,password,uin) values('andrew','23456', 11111111)");
         stat.execute("insert into account(username,password,uin) values('shane','34567', 222222222)");
         stat.execute("insert into profile(firstname,lastname,email,phone,major,other) values('Bryan','Simmons','fgcu@fgcu.edu','555-555-5555', 'Software Engineering',null)");
